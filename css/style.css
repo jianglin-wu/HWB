@@ -1,0 +1,629 @@
+body,head,footer,
+ul,li,a,h1,h2,h3,p,
+select,input[type="checkbox"],
+input[type="button"]{
+	padding: 0;margin: 0;}
+body{font-size: 14px;
+	font-family: "微软雅黑";}
+a{text-decoration: none;}
+ul{font-size: 0px;
+	list-style: none;}
+li{font-size: 12px;}
+header,footer{display: block;}
+
+/*可重用组件*/
+.search{
+	width: 300px;
+	height: 32px;
+	background-color: white;
+	border: none;
+	display: inline-block;
+	position: relative;
+}
+.search .txt{
+	height: 32px;width: 236px;
+	border: none;
+	padding: 0 54px 0 10px;
+	font-size: 14px;color: #999;
+	line-height: 32px;
+	
+	}
+.search .btn{
+	height: 32px;width: 44px;
+	border: none;
+	padding: 0;
+	position: absolute;
+	top: 0;right: 0;
+	z-index: 10	0;
+	background: url(../img/ui-ico.png) no-repeat 0 -120px;
+	outline: none;
+}
+.search .btn:hover{
+	background: url(../img/ui-ico.png) no-repeat 0 -152px;
+	background-color: #1BB6A2;
+}
+
+.top_bar{
+	width: 100%;
+	background: rgba(76,113,168,0.8);
+	position: fixed;top: 0;left: 0;
+	z-index: 100;
+}
+.top_warp{
+	width: 88%;/*自适应宽度*/
+	height: 60px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.top_warp .top_logo{
+	display: inline-block;
+	height:34px;
+	margin-top: 13px;
+	float: left;
+}
+.top_warp .search{
+	/*显示设备屏幕过小时，隐藏该控件*/
+	display: inline-block;
+	vertical-align: middle;	
+	float: left;
+	margin-top: 14px;
+	margin-left: 14px;
+	width: 270px;
+}
+.top_warp .search .txt{
+	width: 206px;
+}
+.top_warp nav{
+	display: inline-block;
+	position: absolute;
+	margin-left: -170px;
+	left: 50%;
+	bottom: 0;
+}
+.top_warp nav li{
+	display: inline-block;
+	height: 56px;
+	margin-right: 8px;
+	border-bottom: 4px solid transparent;
+}
+.top_warp nav li a{
+	display: inline-block;
+	line-height: 60px;
+	padding: 0 14px;
+	font-size: 14px;
+	color: white;
+	cursor: pointer;
+}
+.top_warp nav li:hover,
+.top_warp nav li.active{
+	border-bottom: 4px solid #1bb6a2;
+}
+.top_warp nav li:hover a,
+.top_warp nav li.active a{
+	color: #1bb6a2;
+}
+.top_warp .location{
+	line-height: 60px;
+	width: 60px;
+	font-size: 14px;
+	color: white;
+	background: url(../img/ui-ico.png) no-repeat 14px -40px;
+	padding-left: 16px;
+	text-align: center;
+	cursor: pointer;
+	float: right;
+}
+/*定位靠左样式，未登录使用该属性*/
+.top_warp .cent_locat{
+	position: absolute;
+	left: 50%;
+	margin-left: 160px;
+}
+.top_warp .location:hover{
+	color: #1bb6a2;
+	background: url(../img/ui-ico.png) no-repeat 14px 20px;
+	}
+.top_warp .messages{
+	/*登陆成功后设置该属性为block，显示消息*/
+	display: none;
+	color: white;
+	line-height: 60px;
+	margin-right: 5px;
+	padding-right: 38px;
+	position: relative;
+	cursor: pointer;
+	background: url(../img/ui-ico.png) no-repeat 32px -212px;
+	float: right;
+}
+.top_warp .messages span{
+	color: white;
+	height: 20px;
+	position: absolute;
+	top: 8px;
+	right: 0;
+	background: red;
+	line-height: 20px;
+	border-radius: 50%;
+	font-size: 12px;
+	padding: 2px;
+	font-family: 'Arial' ;
+}
+.top_warp .messages:hover{
+	color: #1bb6a2;
+	background: url(../img/ui-ico.png) no-repeat 32px -254px;
+}
+.top_warp .user{
+	/*登陆成功后设置该属性为block，显示头像*/
+	display: none;
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin-top: 10px;
+	border-radius: 50%;
+	overflow: hidden; 
+	border: 1px solid #1bb6a2;
+}
+.top_warp .user:hover{
+	border-color: white;
+}
+.top_warp .user img{
+	width: 100%;
+	height: 100%;
+}
+.top_warp .top_btn{
+	display: inline-block; 
+	width: 58px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	text-align: center;
+	color: white;
+	border: 1px white solid;
+	border-radius: 1px;
+	margin: 15px 15px 0 0;
+	/*position: absolute;
+	top: 50%;margin-top: -15px;*/
+	float: right;
+	cursor: pointer;
+}
+.top_warp .top_btn:hover{
+	color: #1BB6A2;
+	border-color: #1BB6A2;}
+.top_warp div.login{right: 76px;}
+.top_warp a.register{right: 0;
+}
+
+.login_wrap{
+	width: 318px;
+	height: 498px;
+	background: white;
+	border: 1px solid #eaeaea;
+	position: fixed;
+	top: 50%;left: 50%;
+	margin: -250px 0 0 -165px;
+	z-index: 500;
+	box-shadow: 3px 3px 30px rgba(0,0,0,0.5);
+	display: none;overflow: hidden;
+}
+.login_top{
+	padding: 40px 30px;
+	border-bottom:1px solid #eee;
+
+}
+.login_top strong{
+	position: absolute;
+	right: -2px;
+	top: -2px;
+	width: 30px;
+	height: 22px;
+	line-height: 20px;
+	text-align: center;
+	background-color: #eee;
+	border-radius: 0%;
+	color: #ddd;
+	font-size: 18px;
+	cursor: pointer;
+	font-weight: 400;
+}
+.login_top strong:hover{
+	background-color: #ddd;
+	color: #f00;
+}
+.login_wrap h4{
+	margin: 0;
+	color: #747474;
+	font-size: 14px;
+	font-weight: lighter;
+}
+.login_top h4{
+margin-bottom: 20px; 
+}
+.login_btm h4{
+margin-bottom: 15px; 
+}
+.login_top .login-user,.login_top .login-pass{
+	padding-left: 44px;
+	margin-bottom: 20px;
+	width: 212px;
+	height: 38px;
+	border: 2px solid #e1e1e1;
+}
+.login_top .login-user{
+	background:url(../img/login-ico.jpg) no-repeat 0 0;
+}
+.login_top .login-pass{
+	background:url(../img/login-ico.jpg) no-repeat 0 -36px;
+}
+.login_top label{
+	font-size: 12px;
+	color: #9999b2;
+}
+.login_top a{
+	text-decoration: none;
+	float: right;
+	color: #999;
+	font-size: 12px;
+}
+.login_top .login-btn{
+	width:260px;
+	height: 44px;
+	margin-top: 28px;
+	background: #dc3c00;
+	border: none;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.login_btm{
+	padding: 20px 30px 50px;
+	border-bottom:1px solid #eee;
+
+}
+.login_btm li{
+	display: inline-block;
+	margin-right: 5px;
+}
+.login_btm ul{
+	margin-bottom: 20px;
+}
+.login_btm span{
+	font-size: 12px;
+	color: 666;
+}
+.login_btm .signup{
+	font-size: 12px;
+	margin-left: 20px;
+}
+
+
+.search{
+	width: 300px;
+	height: 32px;
+	background-color: white;
+	border: none;
+	display: inline-block;
+	position: relative;
+}
+.search .txt{
+	height: 32px;width: 236px;
+	border: none;
+	padding: 0 54px 0 10px;
+	font-size: 14px;color: #999;
+	line-height: 32px;
+	
+	}
+.search .btn{
+	height: 32px;width: 44px;
+	border: none;
+	padding: 0;
+	position: absolute;top: 0;right: 0;z-index: 100;
+	background: url(../img/ui-ico.png) no-repeat 0 -120px;
+	outline: none;
+}
+.search .btn:hover{
+	background: url(../img/ui-ico.png) no-repeat 0 -152px;
+	background-color: #1BB6A2;
+}
+
+header{width: 100%;height: 470px;
+	position: relative;
+	padding-top: 190px;overflow: hidden;
+	}
+header ul li{
+	width: 1920px;height: 660px;
+	position: absolute;left: 50%;top: 0;z-index: -10;
+	margin-left: -960px;}
+header .logo{
+	margin: 0 auto;
+	width: 800px;height: 98px;
+}
+header .logo hr{
+	display: inline-block; 
+	width: 300px;
+	border: 2px white solid;
+	border-left: none;
+	border-right: none;
+	position: relative;
+	margin: 0;top: -15px;
+}
+header  h2{
+	margin-top: 18px;
+	color: white;
+	font-size: 36px;
+	font-weight: 400;
+	text-align: center;
+}
+header  p{
+	font-size: 18px;
+	text-align: center;
+	color: white;
+}
+header .search{
+	margin: 46px auto 0;
+	display: block;
+}
+
+
+.container{}
+.container .searchwrap{
+	width: 100%;height: 70px;
+	background-color: #eee;
+}
+.container .searchwrap .searchcriteria{
+	width:1000px;
+	height: 50px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+.container .searchwrap .searchcriteria select{
+	width: 98px;height: 28px;
+	border: 1px solid #999;
+	color: #666;
+	font-size: 14px;
+	border-radius: 3px;
+	margin-right: 40px;
+	cursor: pointer;
+	
+}
+.container .searchwrap .searchcriteria input[type="submit"],
+.container .searchwrap .searchcriteria input[type="button"]{
+	height: 28px;width: 78px;
+	border: 1px solid #4e8be6;
+	background-color: white;
+	color: #666;
+	font-size: 14px;
+	border-radius: 3px;
+	margin-right: 30px;
+	cursor: pointer;
+}
+.container .searchwrap .searchcriteria input[type="checkbox"]{
+	border-color: #666;
+	cursor: pointer;
+}
+.container .searchwrap .searchcriteria label{
+	color: #666;
+	font-size: 14px;
+	margin-right: 50px;
+	cursor: pointer;
+}
+.container .searchwrap .searchcriteria input[type="submit"]{
+	color: #ccc;
+}
+
+.container hr{
+	border: 1px solid #4e8be6;width:730px;
+	margin-top: 50px;
+}
+.container h2{
+	font-size: 30px;color: #333;text-align: center;
+	display: inline-block;
+	background-color: white;width: 140px;
+	position:relative;top: -30px;left: 50%;
+	margin-left: -70px;
+	
+}
+.container p{
+	font-size: 14px;color: #333;text-align: center;
+	margin-top: -30px;
+}
+.container ul.products_nav{
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+.container .products_nav li{
+	display: inline-block;
+	margin: 0 6px;
+	padding-bottom: 14px;
+	border-bottom: 6px solid #fff;
+}
+.container .products_nav li:hover{
+	border-color: #1bb6a2;
+}
+.container .products_nav li a{
+	display: inline-block;
+	width: 300px;
+	height: 240px;
+	}
+.container .products_nav li.products_1 a{
+	background: url(../img/1.jpg) no-repeat;
+}
+.container .products_nav li.products_2 a{
+	background: url(../img/2.jpg) no-repeat;
+}
+.container .products_nav li.products_3 a{
+	background: #4e8be6;
+}
+
+.container ul.products_nav li h3{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	line-height: 240px;
+}
+.container ul.products_nav li span{
+	font-size: 18px;
+	text-align: center;
+	color:white;
+	display:block;
+	margin-top: -90px;
+}
+.container hr.hr_middle{
+	border: 1px solid #DDDDDD;
+	width: 100%;margin: 0;
+	border-left: none;
+	border-right: none;
+}
+.container .product_list{
+	margin: 50px auto 0;
+	width: 876px;
+	position: relative;
+}
+.container .product_list ul.product_keyword{
+	position: absolute;top: -20px;
+}
+.container .product_list ul.product_keyword li{
+	display: inline-block;
+	font-size: 14px;
+	color: #666;
+	margin-right: 12px;
+	cursor: pointer;
+}
+.container .product_list ul.product_keyword li:hover{
+	color: #4E8BE6;
+}
+.container .product_list .rest{
+	position: absolute;right: 0;top: -32px;
+	width: 56px;
+	height: 28px;
+	border-bottom: #4E8BE6 4px solid;
+	color: #333;
+	background: url(../img/ui-ico.png) no-repeat 18px -184px;
+	padding-left: 44px;
+	line-height: 28px;
+	cursor: pointer;
+}
+.container ul.product_cont{
+	margin-left: -12px;
+}
+.container ul.product_cont li{
+	display: inline-block;
+	margin-left: 12px;
+	margin-bottom: 16px;
+}
+.container ul.product_cont li:last-child .product_img{
+	
+	background-color: #4E8BE6;
+	/*top: -134px;*/
+	
+}
+.container ul.product_cont li:last-child .product_img a{
+	line-height: 200px;text-align: center;
+	display: block;
+	color: white;font-size:24px ;
+}
+.container ul.product_cont .product_img{
+	width: 210px;height: 200px;
+	position: relative;
+}
+.container ul.product_cont .product_img img{
+	width:100%;height: 100%;
+}
+.container ul.product_cont h3{
+	font-size: 14px;color: #666;
+	font-weight: 400;
+	line-height: 30px;
+}
+.container ul.product_cont p{
+	margin: 0;
+	text-align: left;
+	font-size: 12px;color: #666;
+}
+footer{
+	background: #141518;
+	width: 100%;
+	height: 260px;
+	padding-top: 30px;
+}
+footer .ft_cont{
+	margin: 0 auto;
+	width: 956px;
+	position: relative;
+	
+}
+footer .ft_cont_left,footer .ft_cont_right{
+	width: 400px;
+	border-top: 2px solid white;
+	position: absolute;
+	top: 0;
+	
+}
+footer .ft_cont_left{
+	left: 0;
+}
+footer .ft_cont_left .servicelink{
+	text-align: center;
+	margin-top: 30px;
+}
+footer .ft_cont_left .servicelink li{
+	margin-bottom: 28px;
+}
+footer .ft_cont_left .servicelink li a{
+	color: white;
+	font-size: 14px;
+}
+footer .ft_cont_middle{
+	width: 156px;
+	display: inline-block;
+	position: absolute;top: 0;
+	left: 50%;
+	margin-left: -78px;
+}
+footer .ft_cont_middle p,footer .ft_cont_middle span{
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+}
+footer .ft_cont_middle p{
+	line-height: 2px;
+	margin-bottom: 30px;
+}
+footer .ft_cont_middle span{
+	line-height: 24px;
+}
+footer .ft_cont_right{
+	right: 0;
+}
+footer .ft_cont_right h3{
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	font-weight: 400;
+	line-height: 40px;
+	margin-top: 18px;
+}
+footer .ft_cont_right ul{
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+}
+footer .ft_cont_right ul.contact{
+	background: url(../img/contact_ico.png) no-repeat 6px;
+	margin-bottom: 14px;
+}
+footer .ft_cont_right ul.contact li{
+	width: 38px;height: 40px;
+	display: inline-block;
+	border-radius: 50%;
+	margin: 0 6px;
+}
+footer .ft_cont_right ul span{
+	color: white;
+	font-size: 14px;
+	line-height: 26px;
+	margin-left: 6px;
+}
