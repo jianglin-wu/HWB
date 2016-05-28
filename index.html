@@ -1,30 +1,38 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title>海王扒留学生闲置物品交易中心</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/ajax.js"></script>
+		<script src="js/app.js"></script>
 	</head> 
 		<div class="top_bar">
-			<nav class="nav_top">
+		<div class="top_warp">
 				<a class="top_logo" href="#"><img src="img/logo-ico.png" title="" alt="logo"/></a>
 				<div class="search">
 					<form>
-						<input class="txt" type="text" name=""  value="套房出租" />
+						<input class="txt" type="text" name=""  placeholder="套房出租" />
 						<input class="btn" type="button" />
 					</form>
 				</div>
-				<ul>
-					<li class="active"><a href="#">首页</a>
-					</li><li><a href="#">二手物品</a>
-					</li><li><a href="#">社区论坛</a>
-					</li><li><a href="#">物品发布</a>
-				</ul>
-				<div class="location">定位</div>
+				<nav class="nav_top">
+					<ul>
+						<li class="active"><a href="#">首页</a>
+						</li><li><a href="#">房屋租凭</a>
+						</li><li><a href="#">汽车交易</a>
+						</li><li><a href="#">物品发布</a>
+					</ul>
+				</nav>
+				<div class="user"><img src="img/portrait.jpg"></div>
+				<a class="register top_btn" href="signup.html">注册</a>
 				<div class="login top_btn">登陆</div>
-				<div class="register top_btn">注册</div>
-			</nav>
+				<div class="location cent_locat">定位</div>
+				<div class="messages">消息
+				<span>99+</span></div>
 		</div>
+	</div>
 		<header>
 				<div class="logo">
 					<hr />
@@ -35,14 +43,42 @@
 				<p>Overseas students spare items trading center</p>
 				<div class="search">
 					<form>
-						<input class="txt" type="text" name=""  value="套房出租" />
+						<input class="txt" type="text" name=""  placeholder="套房出租" />
 						<input class="btn" type="button" />
 					</form>
 				</div>
-				<ul>
-				<li><img src="img/banner.jpg"/></li>
+				<ul class="home_bg">
+				<li><img src="img/bg/banner1.jpg"/></li>
+				<li><img src="img/bg/banner2.jpg"/></li>
+				<li><img src="img/bg/banner3.jpg"/></li>
 				</ul>
 		</header>
+		<div class="login_wrap">
+			<div class="login_top">
+					<strong>x</strong>
+					<h4>账号登陆</h4>
+					<form>
+						<input class="login-user" type="text" value="" placeholder="输入用户名/邮箱/手机号"/>
+						<br />
+						<input class="login-pass" type="password" value="" placeholder="输入密码"/>
+						<input id="login-checkbox" type="checkbox">
+						<label for="login-checkbox">下次自动登陆</label>
+						<a href="#">忘记密码</a>
+						<input class="login-btn" type="botton" value="登陆">
+					</form>
+			</div>
+			<div class="login_btm">
+				<h4>第三方账号登陆</h4>
+				<ul>
+					<li><a href="http://www.sina.com.cn/"><img src="img/login_ico/xl.jpg" /></a>
+					</li><li><a href="http://www.baidu.com.cn/"><img src="img/login_ico/bd.jpg" /></a>
+				</li><li><a href="http://www.qq.com.cn/"><img src="img/login_ico/qq.jpg" /></a>
+			</li><li><a href="http://www.github.com.cn/"><img src="img/login_ico/git.jpg" /></a></li>
+				</ul>
+				<span>还没有账号？</span>
+				<a class="signup" href="signup.html">注册账号</a>
+			</div>
+		</div>
 		<div class="container">
 				<div class="searchwrap">
 					<div class="searchcriteria">
@@ -53,17 +89,18 @@
 								<option>二手家具</option>
 								<option>二手家电</option>
 							</select>
-							<input style="background-color: #4E8BE6; color: white;" type="button" value="出售" />
-							<input type="button" value="购买" />
-							<input type="checkbox" />
+							<input class="sell_btn" type="button" value="出售" />
+							<input class="buy_btn" type="button" value="购买" />
+					
 							<select class="place" >
-								<option>悉尼</option>
-								<option>悉尼</option>
-								<option>悉尼</option>
+								<option>地区</option>
+								<option>悉尼1</option>
+								<option>悉尼2</option>
+								<option>悉尼3</option>
 							</select>
-							<input type="checkbox" />
-							<label>不限</label>
-							<input style="background-color: #4E8BE6;color: white;" type="button" value="出售" />
+							<input id="unlimited" type="checkbox" />
+							<label for="unlimited">不限</label>
+							<input type="submit" value="匹配" />
 						</form>
 					</div>
 				</div>
@@ -79,18 +116,18 @@
 						<span>Used-car</span>
 					</a></li>
 					<li class="products_3"><a href="#">
-						<h3>其他精品&gt;&gt;</h3><span>?</span>
+						<h3>其他精品&gt;&gt;</h3><span>other</span>
 						</a></li>
 				</ul>
 				<hr class="hr_middle" />
 				<div class="product_list">
 					<ul class="product_keyword">
-						<li><a href="#">全部</a></li>
-						<li><a href="#">轿车</a></li>
-						<li><a href="#">皮卡</a></li>
-						<li><a href="#">越野</a></li>
-						<li><a href="#">摩托</a></li>
-						<li><a href="#">跑车</a></li>
+						<li>全部</li>
+						<li>轿车</li>
+						<li>皮卡</li>
+						<li>越野</li>
+						<li>摩托</li>
+						<li>跑车</li>
 					</ul>
 					<div class="rest">换一换</div>
 					<ul class="product_cont">
@@ -148,7 +185,8 @@
 							<div class="product_img">
 								<a href="#">查看更多&gt;&gt;</a>
 							</div>
-							
+							<h3>&nbsp;</h3>
+							<p>&nbsp;</p>
 						</li>
 					</ul>
 				</div>

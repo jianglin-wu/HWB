@@ -1,11 +1,47 @@
-body,head,footer,ul,li,a,h1,h2,h3,p,
-select,input[type="checkbox"],input[type="button"]{
+body,head,footer,
+ul,li,a,h1,h2,h3,p,
+select,input[type="checkbox"],
+input[type="button"]{
 	padding: 0;margin: 0;}
-body{font-size: 14px;font-family: "微软雅黑";}
+body{font-size: 14px;
+	font-family: "微软雅黑";}
 a{text-decoration: none;}
-ul{font-size: 0px;list-style: none;}
+ul{font-size: 0px;
+	list-style: none;}
 li{font-size: 12px;}
 header,footer{display: block;}
+
+/*可重用组件*/
+.search{
+	width: 300px;
+	height: 32px;
+	background-color: white;
+	border: none;
+	display: inline-block;
+	position: relative;
+}
+.search .txt{
+	height: 32px;width: 236px;
+	border: none;
+	padding: 0 54px 0 10px;
+	font-size: 14px;color: #999;
+	line-height: 32px;
+	
+	}
+.search .btn{
+	height: 32px;width: 44px;
+	border: none;
+	padding: 0;
+	position: absolute;
+	top: 0;right: 0;
+	z-index: 10	0;
+	background: url(../img/ui-ico.png) no-repeat 0 -120px;
+	outline: none;
+}
+.search .btn:hover{
+	background: url(../img/ui-ico.png) no-repeat 0 -152px;
+	background-color: #1BB6A2;
+}
 
 .top_bar{
 	width: 100%;
@@ -13,82 +49,254 @@ header,footer{display: block;}
 	position: fixed;top: 0;left: 0;
 	z-index: 100;
 }
-.top_bar .nav_top{
-	width:1200px;
+.top_warp{
+	width: 88%;/*自适应宽度*/
 	height: 60px;
 	margin: 0 auto;
 	position: relative;
-	z-index: 100;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
-.top_bar .nav_top .top_logo{
+.top_warp .top_logo{
+	display: inline-block;
 	height:34px;
 	margin-top: 13px;
 	float: left;
 }
-.top_bar .nav_top .search{
-	margin-left: 70px;
-	top: 2px;
-	display: none;
-}
-.top_bar .nav_top ul{
-	height: 100%;
-	text-align: center;
+.top_warp .search{
+	/*显示设备屏幕过小时，隐藏该控件*/
 	display: inline-block;
-	margin-left: 320px;
+	vertical-align: middle;	
+	float: left;
+	margin-top: 14px;
+	margin-left: 14px;
+	width: 270px;
 }
-.top_bar .nav_top li,
-.top_bar .nav_top .location{
+.top_warp .search .txt{
+	width: 206px;
+}
+.top_warp nav{
+	display: inline-block;
+	position: absolute;
+	margin-left: -170px;
+	left: 50%;
+	bottom: 0;
+}
+.top_warp nav li{
 	display: inline-block;
 	height: 56px;
-	line-height: 56px;
-	margin-right: 5px;
+	margin-right: 8px;
+	border-bottom: 4px solid transparent;
 }
-.top_bar .nav_top li a{
+.top_warp nav li a{
 	display: inline-block;
+	line-height: 60px;
 	padding: 0 14px;
 	font-size: 14px;
 	color: white;
 	cursor: pointer;
 }
-.top_bar .nav_top li:hover,
-.top_bar .nav_top li.active,
-.top_bar .nav_top .location:hover{
+.top_warp nav li:hover,
+.top_warp nav li.active{
 	border-bottom: 4px solid #1bb6a2;
 }
-.top_bar .nav_top li:hover a,
-.top_bar .nav_top li.active a,
-.top_bar .nav_top .location:hover{
+.top_warp nav li:hover a,
+.top_warp nav li.active a{
 	color: #1bb6a2;
 }
-.top_bar .nav_top .location{
+.top_warp .location{
+	line-height: 60px;
 	width: 60px;
 	font-size: 14px;
 	color: white;
-	background: url(../img/ui-ico.png) no-repeat 0.833rem -40px;
-	padding-left: 20px;
+	background: url(../img/ui-ico.png) no-repeat 14px -40px;
+	padding-left: 16px;
 	text-align: center;
 	cursor: pointer;
+	float: right;
 }
-.top_bar .nav_top .location:hover{
-	background: url(../img/ui-ico.png) no-repeat 0.833rem 20px;
+/*定位靠左样式，未登录使用该属性*/
+.top_warp .cent_locat{
+	position: absolute;
+	left: 50%;
+	margin-left: 160px;
+}
+.top_warp .location:hover{
+	color: #1bb6a2;
+	background: url(../img/ui-ico.png) no-repeat 14px 20px;
 	}
-.top_bar .nav_top div.top_btn{
-	width: 58px;height: 28px;
-	font-size: 14px;text-align: center;
-	color: white;line-height: 28px;
+.top_warp .messages{
+	/*登陆成功后设置该属性为block，显示消息*/
+	display: none;
+	color: white;
+	line-height: 60px;
+	margin-right: 5px;
+	padding-right: 38px;
+	position: relative;
+	cursor: pointer;
+	background: url(../img/ui-ico.png) no-repeat 32px -212px;
+	float: right;
+}
+.top_warp .messages span{
+	color: white;
+	height: 20px;
+	position: absolute;
+	top: 8px;
+	right: 0;
+	background: red;
+	line-height: 20px;
+	border-radius: 50%;
+	font-size: 12px;
+	padding: 2px;
+	font-family: 'Arial' ;
+}
+.top_warp .messages:hover{
+	color: #1bb6a2;
+	background: url(../img/ui-ico.png) no-repeat 32px -254px;
+}
+.top_warp .user{
+	/*登陆成功后设置该属性为block，显示头像*/
+	display: none;
+	width: 40px;
+	height: 40px;
+	float: right;
+	margin-top: 10px;
+	border-radius: 50%;
+	overflow: hidden; 
+	border: 1px solid #1bb6a2;
+}
+.top_warp .user:hover{
+	border-color: white;
+}
+.top_warp .user img{
+	width: 100%;
+	height: 100%;
+}
+.top_warp .top_btn{
+	display: inline-block; 
+	width: 58px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 14px;
+	text-align: center;
+	color: white;
 	border: 1px white solid;
 	border-radius: 1px;
-	display: inline-block;
-	position: absolute;
-	top: 50%;margin-top: -15px;
+	margin: 15px 15px 0 0;
+	/*position: absolute;
+	top: 50%;margin-top: -15px;*/
+	float: right;
 	cursor: pointer;
 }
-.top_bar .nav_top .top_btn:hover{
+.top_warp .top_btn:hover{
 	color: #1BB6A2;
 	border-color: #1BB6A2;}
-.top_bar .nav_top div.login{right: 76px;}
-.top_bar .nav_top div.register{right: 0;}
+.top_warp div.login{right: 76px;}
+.top_warp a.register{right: 0;
+}
+
+.login_wrap{
+	width: 318px;
+	height: 498px;
+	background: white;
+	border: 1px solid #eaeaea;
+	position: fixed;
+	top: 50%;left: 50%;
+	margin: -250px 0 0 -165px;
+	z-index: 500;
+	box-shadow: 3px 3px 30px rgba(0,0,0,0.5);
+	display: none;overflow: hidden;
+}
+.login_top{
+	padding: 40px 30px;
+	border-bottom:1px solid #eee;
+
+}
+.login_top strong{
+	position: absolute;
+	right: -2px;
+	top: -2px;
+	width: 30px;
+	height: 22px;
+	line-height: 20px;
+	text-align: center;
+	background-color: #eee;
+	border-radius: 0%;
+	color: #ddd;
+	font-size: 18px;
+	cursor: pointer;
+	font-weight: 400;
+}
+.login_top strong:hover{
+	background-color: #ddd;
+	color: #f00;
+}
+.login_wrap h4{
+	margin: 0;
+	color: #747474;
+	font-size: 14px;
+	font-weight: lighter;
+}
+.login_top h4{
+margin-bottom: 20px; 
+}
+.login_btm h4{
+margin-bottom: 15px; 
+}
+.login_top .login-user,.login_top .login-pass{
+	padding-left: 44px;
+	margin-bottom: 20px;
+	width: 212px;
+	height: 38px;
+	border: 2px solid #e1e1e1;
+}
+.login_top .login-user{
+	background:url(../img/login-ico.jpg) no-repeat 0 0;
+}
+.login_top .login-pass{
+	background:url(../img/login-ico.jpg) no-repeat 0 -36px;
+}
+.login_top label{
+	font-size: 12px;
+	color: #9999b2;
+}
+.login_top a{
+	text-decoration: none;
+	float: right;
+	color: #999;
+	font-size: 12px;
+}
+.login_top .login-btn{
+	width:260px;
+	height: 44px;
+	margin-top: 28px;
+	background: #dc3c00;
+	border: none;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.login_btm{
+	padding: 20px 30px 50px;
+	border-bottom:1px solid #eee;
+
+}
+.login_btm li{
+	display: inline-block;
+	margin-right: 5px;
+}
+.login_btm ul{
+	margin-bottom: 20px;
+}
+.login_btm span{
+	font-size: 12px;
+	color: 666;
+}
+.login_btm .signup{
+	font-size: 12px;
+	margin-left: 20px;
+}
+
 
 .search{
 	width: 300px;
@@ -121,12 +329,12 @@ header,footer{display: block;}
 
 header{width: 100%;height: 470px;
 	position: relative;
-	padding-top: 190px;
+	padding-top: 190px;overflow: hidden;
 	}
 header ul li{
-	width: 1200px;height: 660px;
+	width: 1920px;height: 660px;
 	position: absolute;left: 50%;top: 0;z-index: -10;
-	margin-left: -600px;}
+	margin-left: -960px;}
 header .logo{
 	margin: 0 auto;
 	width: 800px;height: 98px;
@@ -176,8 +384,10 @@ header .search{
 	font-size: 14px;
 	border-radius: 3px;
 	margin-right: 40px;
+	cursor: pointer;
 	
 }
+.container .searchwrap .searchcriteria input[type="submit"],
 .container .searchwrap .searchcriteria input[type="button"]{
 	height: 28px;width: 78px;
 	border: 1px solid #4e8be6;
@@ -186,15 +396,22 @@ header .search{
 	font-size: 14px;
 	border-radius: 3px;
 	margin-right: 30px;
+	cursor: pointer;
 }
 .container .searchwrap .searchcriteria input[type="checkbox"]{
 	border-color: #666;
+	cursor: pointer;
 }
 .container .searchwrap .searchcriteria label{
 	color: #666;
 	font-size: 14px;
 	margin-right: 50px;
+	cursor: pointer;
 }
+.container .searchwrap .searchcriteria input[type="submit"]{
+	color: #ccc;
+}
+
 .container hr{
 	border: 1px solid #4e8be6;width:730px;
 	margin-top: 50px;
@@ -257,6 +474,8 @@ header .search{
 .container hr.hr_middle{
 	border: 1px solid #DDDDDD;
 	width: 100%;margin: 0;
+	border-left: none;
+	border-right: none;
 }
 .container .product_list{
 	margin: 50px auto 0;
@@ -268,13 +487,12 @@ header .search{
 }
 .container .product_list ul.product_keyword li{
 	display: inline-block;
-}
-.container .product_list ul.product_keyword li a{
 	font-size: 14px;
 	color: #666;
 	margin-right: 12px;
+	cursor: pointer;
 }
-.container .product_list ul.product_keyword li a:hover{
+.container .product_list ul.product_keyword li:hover{
 	color: #4E8BE6;
 }
 .container .product_list .rest{
@@ -299,7 +517,7 @@ header .search{
 .container ul.product_cont li:last-child .product_img{
 	
 	background-color: #4E8BE6;
-	top: -134px;
+	/*top: -134px;*/
 	
 }
 .container ul.product_cont li:last-child .product_img a{
