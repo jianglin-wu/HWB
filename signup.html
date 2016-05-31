@@ -54,6 +54,7 @@
 				left: 50%;
 				margin-left: -275px;
 				margin-top: 60px;
+				border: 1px solid red;
 			}
 
 			.container p{
@@ -105,8 +106,17 @@
 
 			}
 		</style>
+		<link rel="stylesheet" href="public/public.css">
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// $("#_header").load("header.html");
+				$("#_footer").load("footer.html");
+			})
+		</script>
 	</head>
 	<body>
+	<!-- <div id="_header" class="top_bar"></div> -->
 		<div class="top_ber">
 			<div class="top_nav">
 				<a href="index.html"><img src="img/logo-ico.png"></a>
@@ -148,5 +158,6 @@
 				<input type="submit" value="注册" />
 			</form>	
 		</div>
+		<!-- <footer id="_footer"></footer> -->
 	</body>
 </html>

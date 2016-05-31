@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index2.html</title>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript">
+		$(function(){
+			$("#_header").load("header.html",function(){
+				$("#nav_ul").children().eq(1).addClass("active");
+				$(".search").css("display","none");
+			});
+			$("footer").load("footer.html");
+			
+		})
+	</script>
+</head>
+<body>
+	<div id="_header" class="top_bar"></div>
+			<div class="container">
+				<hr style="margin-top:100px" />
+				<h2>二手精品</h2>
+				<p>毕业甩货，入学淘货</p>
+				<div class="searchwrap" style="margin:0;margin-top:10px">
+					<div class="searchcriteria">
+						<form>
+							<select class="classify" value="456">
+								<option>选择目录</option>
+								<option>二手汽车</option>
+								<option>二手家具</option>
+								<option>二手家电</option>
+							</select>
+							<input class="sell_btn" type="button" value="出售" />
+							<input class="buy_btn" type="button" value="购买" />
+					
+							<select class="place" >
+								<option>地区</option>
+								<option>悉尼1</option>
+								<option>悉尼2</option>
+								<option>悉尼3</option>
+							</select>
+							<input id="unlimited" type="checkbox" />
+							<label for="unlimited">不限</label>
+							<input type="submit" value="匹配" />
+						</form>
+					</div>
+				</div>
+				<ul class="products_nav">
+					<li class="products_1"><a href="#">
+						<h3>二手房产</h3>
+						<span>The secondary</span>
+					</a></li>
+					<li class="products_2"><a href="#"><h3>二手汽车</h3>
+						<span>Used-car</span>
+					</a></li>
+					<li class="products_3"><a href="#">
+						<h3>其他精品&gt;&gt;</h3><span>other</span>
+						</a></li>
+				</ul>
+				<hr class="hr_middle" />
+				<div class="product_list">
+					<ul class="product_keyword">
+						<li>全部</li>
+						<li>轿车</li>
+						<li>皮卡</li>
+						<li>越野</li>
+						<li>摩托</li>
+						<li>跑车</li>
+					</ul>
+					<div class="rest">换一换</div>
+					<ul class="product_cont">
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_1.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_2.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_3.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_4.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_1.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_2.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						<li>
+							<div class="product_img">
+								<a href="#"><img src="img/product/product_3.jpg" /></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 6卫浴 2车位</p>
+						</li>
+						<li>
+							<div class="product_img">
+								<a href="#">查看更多&gt;&gt;</a>
+							</div>
+							<h3>&nbsp;</h3>
+							<p>&nbsp;</p>
+						</li>
+					</ul>
+				</div>
+		</div>
+	<footer></footer>
+		
+</body>
+</html>
