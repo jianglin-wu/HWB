@@ -50,7 +50,7 @@ header{
 	z-index: 100;
 }
 .top_warp{
-	width: 88%;/*自适应宽度*/
+	width: 1200px;/*自适应宽度*/
 	height: 60px;
 	margin: 0 auto;
 	position: relative;
