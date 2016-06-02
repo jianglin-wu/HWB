@@ -4,11 +4,12 @@
 		<meta charset="utf-8" />
 		<title>注册海王扒账号</title>
 		<style type="text/css">
-			body,a,h1,p{padding: 0;margin: 0;font-family: "微软雅黑";}
+			body,a,h1,p{
+				padding: 0;margin: 0;font-family: "微软雅黑";}
 			body{background: #eee;
 			}
 			a{text-decoration: none;}
-			.top_ber{
+			.signup_ber{
 				background: rgba(76,113,168,0.8);
 				width: 100%;
 				height: 60px;
@@ -45,36 +46,42 @@
 				color: white;
 			}
 			.top_nav .login{
-				color: #0df;
+				color: white;
 			}
 
 			.container{
-				width: 450px;
-				position: absolute;
-				left: 50%;
-				margin-left: -275px;
-				margin-top: 60px;
-			}
-
-			.container p{
-				color: #666666;
-				text-align: right;
-				margin-right: 360px;
-				line-height: 40px;
-				padding-bottom: 30px;
-				font-size: 16px;
+				width: 330px;
+				margin: 66px auto;
+				position: relative;
 			}
 			.container input[type="text"],
 			.container input[type="password"]{
-				width: 328px;
-				height: 38px;
-				border: 1px soild red;
-				position: absolute;
-				right: 0;
+				width: 288px;
+				height: 48px;
+				border: 1px solid #ccc;
 				font-size: 20px;
-				padding-left: 20px;
+				padding: 0 20px;
+				margin-bottom: 30px;
+				color: #666;
+				font-family: '微软雅黑'; 
+			}
+			.container .verify{
+				font-size: 0;
+			}
+			.container .verify input{
+				width: 158px;
+				margin-bottom: 5px;
+			}
+			.container .verify img{
+				height: 50px;
+				width: 118px;
+				float: right;
+			}
+			.container label{
 				color: #333;
-				
+			}
+			.container a{
+				color: #6b89b5;
 			}
 			.container input[type="submit"]{
 				display: block;
@@ -83,70 +90,91 @@
 				background: #dc3c00;
 				border: none;
 				color: white;
-				margin: 30px 0 0 200px;
+				margin: 0 auto;
 				cursor: pointer;
+				margin-top:20px;
+				font-size: 14px;
+				font-family: '微软雅黑'; 
 			}
-			.container p.verify input{
-				width: 158px;
-				right: 170px;
-			}
-			.container p.verify img{
-				display: inline;
-				height: 44px;
-				width: 158px;
+			.container .left_title{
 				position: absolute;
-				right: 0;
+				top: 0;
+				left: -200px;
+				width: 190px;
 			}
-			.clause{
+			.container .left_title label,
+			.container .right_p p{
 				display: block;
-				width: 355px;
-				margin-top: -20px;
-				float: right;
-
+				line-height: 50px;
+				margin-bottom: 30px;
+			}
+			.container .left_title label{
+				text-align: right;
+				color: #666;
+				font-size: 18px;
+			}
+			.container .right_p{
+				position: absolute;
+				top: 0;
+				right: -200px;
+				width: 180px;
+			}
+			.container .right_p p{
+				font-size: 14px;
+				text-align: left;
+				color: red;
+				display: none;
 			}
 		</style>
+		<link rel="stylesheet" href="public/public.css">
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$("footer").load("footer.html");	
+		})
+	</script>
 	</head>
 	<body>
-		<div class="top_ber">
+	<!-- <div id="_header" class="top_bar"></div> -->
+		<div class="signup_ber">
 			<div class="top_nav">
 				<a href="index.html"><img src="img/logo-ico.png"></a>
 				<strong>|</strong>
 				<h1>注册海王扒账号</h1>
-				<a class="login" href="index.html">直接登陆>></a>
-				<span>我已注册，</span>
+				<a class="login" href="index.html">我已注册，直接登陆>></a>
+				<span></span>
 			</div>
 		</div>
 		<div class="container">
 			<form>
-				<p>
-					<label for="user">用户名</label>
 					<input id="user" name="user" class="username" type="text" />
-				</p>
-				<p>
-					<label for="email">邮箱</label>
 					<input id="email" name="email" class="email" type="text" />
-				</p>
-				<p>
-					<label for="pass">密码</label>
 					<input id="pass" name="pass" class="pass" type="password" />
-				</p>
-				<p>
-					<label for="confirmpass">确认密码</label>
 					<input id="confirmpass" name="confirmpass" class="confirmpass" type="password" />
-				</p>
-				<p class="verify">
-					<label for="verifycode">验证码</label>
-					<img src="123">
-					<input id="verifycode"  name="verifycode" type="text" />
-					
-				</p>
-				<div class="clause">
+					<div class="verify">
+						<input id="verifycode"  name="verifycode" type="text" />	
+						<img src="img/1.jpg">
+					</div>
 					<input id="tick" name="tick" type="checkbox" />
 					<label for="tick">阅读并接受</label>
 					<a href="#">《用户协议》</a>
-				</div>
-				<input type="submit" value="注册" />
+					<input type="submit" value="注册" />
 			</form>	
+			<div class="left_title">
+				<label for="user">用户名</label>
+				<label for="email">邮箱</label>
+				<label for="pass">密码</label>
+				<label for="confirmpass">确认密码</label>
+				<label for="verifycode">验证码</label>
+			</div>
+			<div class="right_p">
+				<p>hello!</p>
+				<p>hello!</p>
+				<p>hello!</p>
+				<p>hello!</p>
+				<p>hello!</p>
+			</div>
 		</div>
+		<footer></footer>
 	</body>
 </html>
