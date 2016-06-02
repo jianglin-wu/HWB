@@ -43,7 +43,7 @@ header,footer{display: block;}
 	background-color: #1BB6A2;
 }
 
-.top_bar{
+header{
 	width: 100%;
 	background: rgba(76,113,168,0.8);
 	position: fixed;top: 0;left: 0;
@@ -327,19 +327,19 @@ margin-bottom: 15px;
 	background-color: #1BB6A2;
 }
 
-header{width: 100%;height: 470px;
+.banner{width: 100%;height: 470px;
 	position: relative;
 	padding-top: 190px;overflow: hidden;
 	}
-header ul li{
+.banner ul li{
 	width: 1920px;height: 660px;
 	position: absolute;left: 50%;top: 0;z-index: -10;
 	margin-left: -960px;}
-header .logo{
+.banner .logo{
 	margin: 0 auto;
 	width: 800px;height: 98px;
 }
-header .logo hr{
+.banner .logo hr{
 	display: inline-block; 
 	width: 300px;
 	border: 2px white solid;
@@ -348,19 +348,19 @@ header .logo hr{
 	position: relative;
 	margin: 0;top: -15px;
 }
-header  h2{
+.banner  h2{
 	margin-top: 18px;
 	color: white;
 	font-size: 36px;
 	font-weight: 400;
 	text-align: center;
 }
-header  p{
+.banner  p{
 	font-size: 18px;
 	text-align: center;
 	color: white;
 }
-header .search{
+.banner .search{
 	margin: 46px auto 0;
 	display: block;
 }
