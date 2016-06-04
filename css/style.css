@@ -370,6 +370,8 @@ margin-bottom: 15px;
 .container .searchwrap{
 	width: 100%;height: 70px;
 	background-color: #eee;
+	overflow-y: hidden;
+	overflow-x: scroll;
 }
 .container .searchwrap .searchcriteria{
 	width:1000px;
