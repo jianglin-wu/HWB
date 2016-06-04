@@ -545,20 +545,18 @@ margin-bottom: 15px;
 footer{
 	background: #141518;
 	width: 100%;
-	height: 260px;
-	padding-top: 30px;
 }
 footer .ft_cont{
+	height: 260px;
 	margin: 0 auto;
 	width: 956px;
 	position: relative;
-	
 }
 footer .ft_cont_left,footer .ft_cont_right{
 	width: 400px;
 	border-top: 2px solid white;
 	position: absolute;
-	top: 0;
+	top: 30px;
 	
 }
 footer .ft_cont_left{
@@ -578,7 +576,8 @@ footer .ft_cont_left .servicelink li a{
 footer .ft_cont_middle{
 	width: 156px;
 	display: inline-block;
-	position: absolute;top: 0;
+	position: absolute;
+	top:30px;
 	left: 50%;
 	margin-left: -78px;
 }
