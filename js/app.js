@@ -1,17 +1,17 @@
 //背景轮播
 function bgMove(){
 	var i=0;
-	var size=$('.home_bg li').size();
-	$('.home_bg li').hide();
-	$('.home_bg li').eq(0).show();
+	var size=$('.home_banner li').size();
+	$('.home_banner li').hide();
+	$('.home_banner li').eq(0).show();
 	setInterval(move,5000);
 	function move(){
 		i++;
 		if(i==size){
 			i=0;
 		}
-		$('.home_bg li').fadeOut(1000);
-		$('.home_bg li').eq(i).fadeIn(1000);
+		$('.home_banner li').fadeOut(1000);
+		$('.home_banner li').eq(i).fadeIn(1000);
 	}
 }
 //选项条按钮点击效果切换
