@@ -35,11 +35,11 @@ header,footer{display: block;}
 	position: absolute;
 	top: 0;right: 0;
 	z-index: 10	0;
-	background: url(../img/ui-ico.png) no-repeat 0 -120px;
+	background: url(../img/icon/ui-ico.png) no-repeat 0 -120px;
 	outline: none;
 }
 .search .btn:hover{
-	background: url(../img/ui-ico.png) no-repeat 0 -152px;
+	background: url(../img/icon/ui-ico.png) no-repeat 0 -152px;
 	background-color: #1BB6A2;
 }
 
@@ -108,7 +108,7 @@ header{
 	width: 60px;
 	font-size: 14px;
 	color: white;
-	background: url(../img/ui-ico.png) no-repeat 14px -40px;
+	background: url(../img/icon/ui-ico.png) no-repeat 14px -40px;
 	padding-left: 16px;
 	text-align: center;
 	cursor: pointer;
@@ -122,7 +122,7 @@ header{
 }
 .top_warp .location:hover{
 	color: #1bb6a2;
-	background: url(../img/ui-ico.png) no-repeat 14px 20px;
+	background: url(../img/icon/ui-ico.png) no-repeat 14px 20px;
 	}
 .top_warp .messages{
 	/*登陆成功后设置该属性为block，显示消息*/
@@ -133,7 +133,7 @@ header{
 	padding-right: 38px;
 	position: relative;
 	cursor: pointer;
-	background: url(../img/ui-ico.png) no-repeat 32px -212px;
+	background: url(../img/icon/ui-ico.png) no-repeat 32px -212px;
 	float: right;
 }
 .top_warp .messages span{
@@ -151,7 +151,7 @@ header{
 }
 .top_warp .messages:hover{
 	color: #1bb6a2;
-	background: url(../img/ui-ico.png) no-repeat 32px -254px;
+	background: url(../img/icon/ui-ico.png) no-repeat 32px -254px;
 }
 .top_warp .user{
 	/*登陆成功后设置该属性为block，显示头像*/
@@ -193,7 +193,7 @@ header{
 .top_warp div.login{right: 76px;}
 .top_warp a.register{right: 0;
 }
-
+/*登陆弹窗*/
 .login_wrap{
 	width: 318px;
 	height: 498px;
@@ -213,22 +213,15 @@ header{
 }
 .login_top strong{
 	position: absolute;
-	right: -2px;
-	top: -2px;
-	width: 30px;
-	height: 22px;
-	line-height: 20px;
-	text-align: center;
-	background-color: #eee;
-	border-radius: 0%;
-	color: #ddd;
-	font-size: 18px;
+	right: 0px;
+	top: 0px;
+	width: 20px;
+	height: 20px;
+	background: url(../img/icon/close.png) no-repeat;
 	cursor: pointer;
-	font-weight: 400;
 }
 .login_top strong:hover{
-	background-color: #ddd;
-	color: #f00;
+	background: url(../img/icon/onClose.png) no-repeat;
 }
 .login_wrap h4{
 	margin: 0;
@@ -319,11 +312,11 @@ margin-bottom: 15px;
 	border: none;
 	padding: 0;
 	position: absolute;top: 0;right: 0;z-index: 100;
-	background: url(../img/ui-ico.png) no-repeat 0 -120px;
+	background: url(../img/icon/ui-ico.png) no-repeat 0 -120px;
 	outline: none;
 }
 .search .btn:hover{
-	background: url(../img/ui-ico.png) no-repeat 0 -152px;
+	background: url(../img/icon/ui-ico.png) no-repeat 0 -152px;
 	background-color: #1BB6A2;
 }
 
@@ -502,7 +495,7 @@ margin-bottom: 15px;
 	height: 28px;
 	border-bottom: #4E8BE6 4px solid;
 	color: #333;
-	background: url(../img/ui-ico.png) no-repeat 18px -184px;
+	background: url(../img/icon/ui-ico.png) no-repeat 18px -184px;
 	padding-left: 44px;
 	line-height: 28px;
 	cursor: pointer;
