@@ -2,27 +2,153 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=yes"/>
+	<meta name="msapplication-tap-highlight" content="no" />
 	<meta name="viewport" content="width=device-width">
 	<title>Media——海王扒</title>
 	<link rel="shortcut icon" href="img/favicon48x48.jpg" type="image/x-icon" />
 	<link rel="stylesheet" href="css/public.css">
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+		@media screen and (max-width: 639px) {
+			#search,.location,#login,#register{
+				display: none;
+			}
+			.top_warp .top_logo{
+				margin:22px 4px 0 5px; 
+			}
+			.top_warp .top_logo img{
+				width: 40px;
+			}
+			.top_warp,header{
+				width: 100%;
+				margin: 0;
+			}
+			.top_warp nav{
+				position: static;
+				margin-left: 0px;
+			}
+			.top_warp nav li{
+				margin: 0;
+			}
+			.top_warp nav li a{
+				padding: 0 6px;
+				font-size: 14px;
+			}
+		}
+	</style>
 </head>
 <body>
-	<header></header>
+	<header>
+		<div class="top_warp">
+			<a class="top_logo" href="#"><img src="img/logo-ico.png" title="" alt="logo"/></a>
+			<div id="search" class="search">
+				<form>
+					<input class="txt" type="text" name=""  placeholder="套房出租" />
+					<input class="btn" type="button" />
+				</form>
+			</div>
+			<nav class="nav_top">
+				<ul id="nav_ul">
+					<li><a href="index.html">首页</a>
+					</li><li><a href="house.html">房屋租凭</a>
+					</li><li><a href="car.html">汽车交易</a>
+					</li><li><a href="publish.html">物品发布</a>
+				</ul>
+			</nav>
+			<div class="user"><img src="img/portrait.jpg"></div>
+			<a id="register" class=" top_btn" href="signup.html">注册</a>
+			<div id="login" class="login top_btn">登陆</div>
+			<div class="location cent_locat">定位</div>
+			<div class="messages">消息
+			<span>99+</span></div>
+		</div>
+		<!-- 登陆框组件 -->
+		<div class="login_wrap">
+			<div class="login_top">
+					<strong></strong>
+					<h4>账号登陆</h4>
+					<form>
+						<input class="login-user" type="text" value="" placeholder="输入用户名/邮箱/手机号"/>
+						<br />
+						<input class="login-pass" type="password" value="" placeholder="输入密码"/>
+						<input id="login-checkbox" type="checkbox">
+						<label for="login-checkbox">下次自动登陆</label>
+						<a href="#">忘记密码</a>
+						<input class="login-btn" type="button" value="登陆" />
+					</form>
+			</div>
+			<div class="login_btm">
+				<h4>第三方账号登陆</h4>
+				<ul>
+					<li><a href="http://www.sina.com.cn/"><img src="img/login_ico/xl.jpg" /></a>
+					</li><li><a href="http://www.baidu.com.cn/"><img src="img/login_ico/bd.jpg" /></a>
+				</li><li><a href="http://www.qq.com.cn/"><img src="img/login_ico/qq.jpg" /></a>
+			</li><li><a href="http://www.github.com.cn/"><img src="img/login_ico/git.jpg" /></a></li>
+				</ul>
+				<span>还没有账号？</span>
+				<a class="signup" href="signup.html">注册账号</a>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				//登陆弹出框
+				$('.login').click(function(){
+					$('.login_wrap').show();
+				})
+				
+				$('.login_wrap strong').click(function(){
+					$('.login_wrap').hide();
+				})
+			})
+		</script>
+	</header>
 	<div class="content">
-		
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 	</div>
-	<footer></footer>
-	<script src="js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("header").load("header.html",function(){
-				$("#nav_ul").children().eq(2).addClass("active");
-				$(".search").css("display","none");
-			});
-			$("footer").load("footer.html");
-			
-		})
-	</script>
+	<!-- <footer>
+		<div class="ft_cont">
+			<div class="ft_cont_left">
+				<ul class="servicelink">
+					<li><a href="#">关于我们</a></li>
+					<li><a href="#">加入我们</a></li>
+					<li><a href="#">商务合作</a></li>
+					<li><a href="#">意见反馈</a></li>
+				</ul>
+			</div>
+			<div class="ft_cont_middle">
+				<p>欢迎来到海王扒</p>
+				<img src="img/2Dcode.jpg" />
+				<span>关注海王扒微信公众号</span>
+			</div>
+			<div class="ft_cont_right">
+				<h3>联系我们</h3>
+				<ul class="contact">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul>
+					<li><span>电话:028-88888888</span></li>
+					<li><span>邮箱:123456@sina.com</span></li>
+					<li><span>地址:成都市武侯区</span></li>
+				</ul>
+			</div>
+		</div>
+	</footer> -->
+	<!--[if lt IE 9]>
+	    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
 </body>
 </html>
