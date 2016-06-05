@@ -21,7 +21,8 @@ function btnSwich(btnDown,btnUp){
 	$(btnDown).css('background',btnColor).css('color','white');
 }
 $(function(){
-	bgMove();//背景轮播
+	//banner轮播
+	bgMove();
 	
 	//选项条按钮点击效果切换
 	$('.sell_btn').click(function(){
@@ -47,7 +48,7 @@ $(function(){
 		j++;
 	})
 	
-	//登陆
+	//登陆弹出框
 	$('.login').click(function(){
 		$('.login_wrap').show();
 	})

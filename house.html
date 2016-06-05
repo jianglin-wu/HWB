@@ -4,17 +4,6 @@
 	<meta charset="UTF-8">
 	<title>房屋租赁——海王扒</title>
 	<link rel="stylesheet" href="css/public.css">
-	<script src="js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$("header").load("header.html",function(){
-				$("#nav_ul").children().eq(1).addClass("active");
-				$(".search").css("display","none");
-			});
-			$("footer").load("footer.html");
-			
-		})
-	</script>
 </head>
 <body>
 	<header></header>
@@ -131,6 +120,16 @@
 				</div>
 		</div>
 	<footer></footer>
-		
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("header").load("header.html",function(){
+				//所在页面导航下边框显示
+				$("#nav_ul").children().eq(1).addClass("active");
+			});
+			$("footer").load("footer.html");
+			
+		})
+	</script>
 </body>
 </html>
