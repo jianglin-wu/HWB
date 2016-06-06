@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />    
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=yes"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="width=device-width">
+	<title>距离我成为WEB front-end倒计时</title>
+	<script>
+		window.onload=function(){
+			showTime();
+			function showTime(){
+				var oP=document.getElementById('p');
+				var oH1=document.getElementById('h1');
+				var now=new Date();
+				var end=new Date("2016/8/16,00:00:00");
+				var leftTime=parseInt((end.getTime()-now.getTime())/1000);
+				var hTitle='';
+				if (leftTime<0) {
+					hTitle='距离我承诺我成为WEBfront-end已过去';
+					leftTime=Math.abs(leftTime);
+				}else{
+					hTitle='距离我承诺我成为WEBfront-end还有';
+				}
+				oH1.innerHTML=hTitle;
+				var d=parseInt(leftTime/(24*60*60));
+				var h=parseInt((leftTime/(60*60))%24);
+				var m=parseInt((leftTime/60)%60);
+				var s=leftTime%60;
+				s=s<10?'0'+s:s;
+				p.innerHTML='<span>'+d+'</span>日<span>'+h+'</span>时<span>'+m+'</span>分<span>'+s+'</span>秒';
+				setTimeout(showTime,500);
+			}
+			
+		}
+	</script>
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			background: black;
+		}
+		h1,p{
+			font-size:30px;
+			color: white;
+			font-family:'黑体';
+			text-align:center;
+			line-height: 10px;
+			/*margin: 10px 0;*/
+		}
+		h1{
+			font-size: 38px;
+			margin-top: 150px;
+		}
+		p span{
+			line-height: 100px;
+			font-size: 80px;
+			background: white;
+			border-radius: 10%;
+			color: black;
+			margin: 0 10px;
+		}
+		@media screen and (max-width: 639px) {
+			h1{
+				font-size: 18px;
+			}
+			p{
+				font-size: 14px;
+			}
+			p span{
+				font-size: 40px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1 id="h1"></h1>
+	<p id="p"></p>
+</body>
+</html>
