@@ -14,37 +14,74 @@
 	<script src="js/jquery-1.8.3.min.js"></script>
 	<style>
 		@media screen and (max-width: 639px) {
-			#search,.location,#login,#register{
-				display: none;
+			body{
+				background: #ccc;
+			}
+			.search,.location,.login,.register{
+				display: none!important;
+			}	
+			.top_warp{
+				height: 45px;
+				width: 100%;
+				overflow: visible;
 			}
 			.top_warp .top_logo{
-				margin:22px 4px 0 5px; 
+				margin:13px 4px; 
+				height: 22px;
 			}
 			.top_warp .top_logo img{
-				width: 40px;
+				height: 18px;
 			}
 			.top_warp,header{
 				width: 100%;
 				margin: 0;
 			}
 			.top_warp nav{
-				position: static;
-				margin-left: 0px;
+				position: absolute;
+				top: 47px;
+				left: 0;
+				width: 100%;
+				display: block;
+				margin: 0px;
+			}
+			.top_warp nav ul{
+				background: #333;
+				display: none;
 			}
 			.top_warp nav li{
 				margin: 0;
+				border: none;
+				display: block;
+				height: 45px;
+			}
+			.top_warp nav li:hover{
+				border: none;
 			}
 			.top_warp nav li a{
-				padding: 0 6px;
+				padding: 0 10px;
+				display: block;
 				font-size: 14px;
+				line-height: 45px;
+			}
+			.navbar_toggle{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				margin: 7px 4px 0 0;
+				background: url(img/icon/navbar_toggle.png) no-repeat;
+				float: right;
+				/*background-color: rgba(0,0,0,0.1);*/
 			}
 		}
 	</style>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/webapp.js"></script>
 </head>
 <body>
 	<header>
 		<div class="top_warp">
 			<a class="top_logo" href="#"><img src="img/logo-ico.png" title="" alt="logo"/></a>
+			<span class="navbar_toggle"></span>
 			<div id="search" class="search">
 				<form>
 					<input class="txt" type="text" name=""  placeholder="套房出租" />
@@ -60,7 +97,7 @@
 				</ul>
 			</nav>
 			<div class="user"><img src="img/portrait.jpg"></div>
-			<a id="register" class=" top_btn" href="signup.html">注册</a>
+			<a id="register" class="register top_btn" href="signup.html">注册</a>
 			<div id="login" class="login top_btn">登陆</div>
 			<div class="location cent_locat">定位</div>
 			<div class="messages">消息

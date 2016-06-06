@@ -77,8 +77,8 @@ header{
 .top_warp nav{
 	display: inline-block;
 	position: absolute;
-	margin-left: -170px;
 	left: 50%;
+	margin-left: -170px;
 	bottom: 0;
 }
 .top_warp nav li{
