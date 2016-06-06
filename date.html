@@ -30,6 +30,9 @@
 				var h=parseInt((leftTime/(60*60))%24);
 				var m=parseInt((leftTime/60)%60);
 				var s=leftTime%60;
+				d=d<10?'0'+d:d;
+				h=h<10?'0'+h:h;
+				m=m<10?'0'+m:m;
 				s=s<10?'0'+s:s;
 				p.innerHTML='<span>'+d+'</span>日<span>'+h+'</span>时<span>'+m+'</span>分<span>'+s+'</span>秒';
 				setTimeout(showTime,500);
