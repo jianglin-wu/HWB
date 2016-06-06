@@ -11,7 +11,7 @@
 				<li><a href="index.html">首页</a>
 				</li><li><a href="house.html">房屋租凭</a>
 				</li><li><a href="car.html">汽车交易</a>
-				</li><li><a href="#">物品发布</a>
+				</li><li><a href="publish.html">物品发布</a>
 			</ul>
 		</nav>
 		<div class="user"><img src="img/portrait.jpg"></div>
@@ -21,3 +21,42 @@
 		<div class="messages">消息
 		<span>99+</span></div>
 	</div>
+	<!-- 登陆框组件 -->
+	<div class="login_wrap">
+		<div class="login_top">
+				<strong></strong>
+				<h4>账号登陆</h4>
+				<form>
+					<input class="login-user" type="text" value="" placeholder="输入用户名/邮箱/手机号"/>
+					<br />
+					<input class="login-pass" type="password" value="" placeholder="输入密码"/>
+					<input id="login-checkbox" type="checkbox">
+					<label for="login-checkbox">下次自动登陆</label>
+					<a href="#">忘记密码</a>
+					<input class="login-btn" type="button" value="登陆" />
+				</form>
+		</div>
+		<div class="login_btm">
+			<h4>第三方账号登陆</h4>
+			<ul>
+				<li><a href="http://www.sina.com.cn/"><img src="img/login_ico/xl.jpg" /></a>
+				</li><li><a href="http://www.baidu.com.cn/"><img src="img/login_ico/bd.jpg" /></a>
+			</li><li><a href="http://www.qq.com.cn/"><img src="img/login_ico/qq.jpg" /></a>
+		</li><li><a href="http://www.github.com.cn/"><img src="img/login_ico/git.jpg" /></a></li>
+			</ul>
+			<span>还没有账号？</span>
+			<a class="signup" href="signup.html">注册账号</a>
+		</div>
+	</div>
+	<script>
+		$(function(){
+			//登陆弹出框
+			$('.login').click(function(){
+				$('.login_wrap').show();
+			})
+			
+			$('.login_wrap strong').click(function(){
+				$('.login_wrap').hide();
+			})
+		})
+	</script>
