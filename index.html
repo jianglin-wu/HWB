@@ -14,14 +14,14 @@
 				<a class="top_logo" href="#"><img src="img/logo-ico.png" title="" alt="logo"/></a>
 				<div class="search">
 					<form>
-						<input class="search_txt" type="text" name="top_search_text"  placeholder="套房出租" />
+						<input class="search_txt" type="text" name="top_search_text"  placeholder="请输入关键字" />
 						<a class="search_submite" href="javascript:void(0);"></a>
 						<!-- 重置输入框内容 -->
 						<span class="input_reset"></span>
 					</form>
 				</div>
 				<nav class="nav_top">
-					<ul>
+					<ul id="nav_ul">
 						<li class="active"><a href="index.html">首页</a>
 						</li><li><a href="house.html">房屋租凭</a>
 						</li><li><a href="car.html">汽车交易</a>
@@ -73,7 +73,7 @@
 				<p>Overseas students spare items trading center</p>
 				<div class="search">
 					<form>
-						<input class="search_txt" type="text" name="top_search_text"  placeholder="套房出租" />
+						<input class="search_txt" type="text" name="banner_search_text"  placeholder="请输入关键字" />
 						<a class="search_submite" href="javascript:void(0);"></a>
 						<!-- 重置输入框内容 -->
 						<span class="input_reset"></span>
@@ -99,11 +99,13 @@
 							<input class="sell_btn" type="button" value="出售" />
 							<input class="buy_btn" type="button" value="购买" />
 					
-							<select class="place" >
+							<select id="region" class="place"  >
 								<option>地区</option>
-								<option>悉尼1</option>
-								<option>悉尼2</option>
-								<option>悉尼3</option>
+								<option>悉尼</option>
+								<option>墨尔本</option>
+								<option>麦凯</option>
+								<option>珀斯</option>
+								<option>阿德莱德</option>
 							</select>
 							<input id="unlimited" type="checkbox" />
 							<label for="unlimited">不限</label>

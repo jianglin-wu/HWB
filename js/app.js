@@ -14,27 +14,49 @@ function bgMove(){
 		$('.home_banner li').eq(i).fadeIn(1000);
 	}
 }
+
 //选项条按钮点击效果切换
 function btnSwich(btnDown,btnUp){
 	var btnColor='#4E8BE6';//按钮选中颜色
 	$(btnUp).css('background','white').css('color','#666');
 	$(btnDown).css('background',btnColor).css('color','white');
 }
+
+//main
 $(function(){
+
 	//输入框清除内容功能
 	$(".search_txt").focus(function(){
 		$(this).keydown(function(){
 			$(this).next().next().css('display','block');
-		})
-	});
-	$(".search_txt").blur(function(){
-		if ($(this).val()=='') {	
-			$(this).next().next().delay(5000).css('display','none');
+		});
+		$(this).change(function(){
+			$(this).next().next().css('display','block');
+		});
+		if ($(this).val()!=='') {	
+			$(this).next().next().css('display','block');
 		}
 	});
-	$('.input_reset').on('click',function(){
-		$(this).prev().prev().val("");
+	$(".search_txt").blur(function(){
+			$(this).next().next().css('display','none');
 	});
+	$('.input_reset').on('mousedown',function(){
+		$(this).prev().prev().val("");
+		$(this).css({'display':'none'});
+	});
+	$(".search_submite").on('click',function(){
+		alert('你提交的内容：'+$(this).prev().val());
+	});
+
+	//登陆弹出框
+	$('.login').click(function(){
+		$('.login_wrap').show();
+	});
+	
+	$('.login_wrap strong').click(function(){
+		$('.login_wrap').hide();
+	});
+	
 
 	//banner轮播
 	bgMove();
@@ -45,6 +67,14 @@ $(function(){
 	});
 	$('.buy_btn').click(function(){
 		btnSwich('.buy_btn','.sell_btn');
+	});
+	$('#unlimited').change(function(){
+		if ($(this).is(':checked')) {
+			$('#region').attr('disabled','true').css({'border-color':'#ddd','color':'#bbb'});
+			$('#region').val("地区");
+		}else{
+			$('#region').removeAttr('disabled').css({'border-color':'#ccc','color':'#666'});
+		}
 	});
 	
 	//ajax关键词分页
@@ -61,16 +91,8 @@ $(function(){
 			})
 		})
 		j++;
-	})
-	
-	//登陆弹出框
-	$('.login').click(function(){
-		$('.login_wrap').show();
-	})
-	
-	$('.login_wrap strong').click(function(){
-		$('.login_wrap').hide();
-	})
+	});
 	
 	
-})
+	
+});
