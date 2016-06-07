@@ -20,14 +20,15 @@ header,footer{display: block;}
 	display: inline-block;
 	position: relative;
 }
-.search .txt{
-	height: 32px;width: 236px;
+.search .search_txt{
+	height: 32px;width: 220px;
+	padding: 0 70px 0 10px;
 	border: none;
-	padding: 0 54px 0 10px;
 	font-size: 14px;color: #999;
 	line-height: 32px;
+	margin: 0;
 	}
-.search .btn{
+.search .search_submite{
 	height: 32px;width: 44px;
 	border: none;
 	padding: 0;
@@ -37,9 +38,21 @@ header,footer{display: block;}
 	background: url(../img/icon/ui-ico.png) no-repeat 0 -120px;
 	outline: none;
 }
-.search .btn:hover{
+.search .search_submite:hover{
 	background: url(../img/icon/ui-ico.png) no-repeat 0 -152px;
 	background-color: #1BB6A2;
+}
+.search .input_reset{
+	background: url(../img/icon/reset.png) no-repeat;
+	background-size: 14px 14px;
+	background-position: 4px; 
+	position: absolute;
+	top: 0;right: 44px;
+	z-index: 11;
+	margin: 4px 0;
+	width: 24px;
+	height: 24px;
+	display: none;
 }
 header{
 	width: 100%;
@@ -69,8 +82,8 @@ header{
 	margin-left: 14px;
 	width: 270px;
 }
-.top_warp .search .txt{
-	width: 206px;
+.top_warp .search .search_txt{
+	width: 190px;
 }
 .top_warp nav{
 	display: inline-block;

@@ -21,6 +21,21 @@ function btnSwich(btnDown,btnUp){
 	$(btnDown).css('background',btnColor).css('color','white');
 }
 $(function(){
+	//输入框清除内容功能
+	$(".search_txt").focus(function(){
+		$(this).keydown(function(){
+			$(this).next().next().css('display','block');
+		})
+	});
+	$(".search_txt").blur(function(){
+		if ($(this).val()=='') {	
+			$(this).next().next().delay(5000).css('display','none');
+		}
+	});
+	$('.input_reset').on('click',function(){
+		$(this).prev().prev().val("");
+	});
+
 	//banner轮播
 	bgMove();
 	
