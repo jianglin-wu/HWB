@@ -13,7 +13,7 @@ $(function(){
 	});
 	
 	//输入框清除内容功能
-	$(".search_txt").focus(function(){
+	$(".text_box").focus(function(){
 		$(this).keydown(function(){
 			$(this).next().next().css('display','block');
 		});
@@ -24,7 +24,7 @@ $(function(){
 			$(this).next().next().css('display','block');
 		}
 	});
-	$(".search_txt").blur(function(){
+	$(".text_box").blur(function(){
 			$(this).next().next().css('display','none');
 	});
 	$('.input_reset').on('mousedown',function(){

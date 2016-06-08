@@ -42,7 +42,8 @@ header,footer{display: block;}
 	background: url(../img/icon/ui-ico.png) no-repeat 0 -152px;
 	background-color: #1BB6A2;
 }
-.search .input_reset{
+
+.input_reset{
 	background: url(../img/icon/reset.png) no-repeat;
 	background-size: 14px 14px;
 	background-position: 4px; 
@@ -54,6 +55,13 @@ header,footer{display: block;}
 	height: 24px;
 	display: none;
 }
+.user_box{
+	top: 85px;
+}
+.pass_box{
+	top: 149px;
+}
+
 header{
 	width: 100%;
 	background: rgba(76,113,168,0.8);
