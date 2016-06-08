@@ -42,6 +42,7 @@ header,footer{display: block;}
 	background: url(../img/icon/ui-ico.png) no-repeat 0 -152px;
 	background-color: #1BB6A2;
 }
+
 .input_reset{
 	background: url(../img/icon/reset.png) no-repeat;
 	background-size: 14px 14px;
