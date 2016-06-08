@@ -1,4 +1,8 @@
 $(function(){
+	
+	//login登陆框拖动
+	$("#login_drag").draggable();
+
 	//登陆弹出框
 	$('.login').click(function(){
 		$('.login_wrap').show();
