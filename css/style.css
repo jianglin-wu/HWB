@@ -28,6 +28,10 @@ header,footer{display: block;}
 	line-height: 32px;
 	margin: 0;
 	}
+/*去掉IE10+自动显示的叉叉与小眼睛符号*/
+.search_txt::-ms-clear,
+.login-user::-ms-clear,
+.login-pass::-ms-reveal{ display: none; }
 .search .search_submite{
 	height: 32px;width: 44px;
 	border: none;
