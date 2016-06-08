@@ -25,6 +25,9 @@ function btnSwich(btnDown,btnUp){
 //main
 $(function(){
 
+	//login登陆框拖动
+	$("#login_drag").draggable();
+
 	//输入框清除内容功能
 	$(".search_txt").focus(function(){
 		$(this).keydown(function(){
@@ -56,6 +59,7 @@ $(function(){
 	$('.login_wrap strong').click(function(){
 		$('.login_wrap').hide();
 	});
+
 	
 
 	//banner轮播
