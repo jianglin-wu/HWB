@@ -5,23 +5,429 @@
 	<title>汽车交易——海王扒</title>
 	<link rel="shortcut icon" href="img/favicon48x48.jpg" type="image/x-icon" />
 	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/car.css">
+	<!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=keBQ0XKKzfpHLNMT2m9AbyxfUxHUEBxf"></script>
 </head>
 <body>
-	<header></header>
-	<div class="content">
-		
+	<header>
+			<!-- 顶部导航条 -->
+			<div class="top_warp">
+				<a class="top_logo" href="#"><img src="img/logo-ico.png" title="" alt="logo"/></a>
+				<div class="search">
+					<form>
+						<input class="search_txt text_box" type="text" name="top_search_text"  placeholder="请输入关键字" />
+						<a class="search_submite" href="javascript:void(0);"></a>
+						<!-- 重置输入框内容 -->
+						<span class="input_reset"></span>
+					</form>
+				</div>
+				<nav class="nav_top">
+					<ul id="nav_ul">
+						<li><a href="index.html">首页</a>
+						</li><li><a href="house.html">房屋租凭</a>
+						</li><li class="active"><a href="car.html">汽车交易</a>
+						</li><li><a href="publish.html">物品发布</a>
+					</ul>
+				</nav>
+				<div class="user"><img src="img/portrait.jpg" alt="" /></div>
+				<a class="register top_btn" href="signup.html">注册</a>
+				<div class="login top_btn">登陆</div>
+				<div class="location cent_locat">定位</div>
+				<div class="messages">消息
+				<span>99+</span></div>
+			</div>
+			<!-- 登陆框组件 -->
+			<div id="login_drag" class="login_wrap">
+				<div class="login_top">
+						<strong></strong>
+						<h4>账号登陆</h4>
+						<form>
+							<input class="login-user text_box" type="text" value="" placeholder="输入用户名/邮箱"/>
+							<br />
+							<span class="input_reset user_box"></span>
+							<input class="login-pass text_box" type="password" value="" placeholder="输入密码"/>
+							<i></i>
+							<span class="input_reset pass_box"></span>
+							<input id="login-checkbox" type="checkbox">
+							<label for="login-checkbox">下次自动登陆</label>
+							<a href="#">忘记密码</a>
+							<input class="login-btn" type="button" value="登陆" />
+						</form>
+				</div>
+				<div class="login_btm">
+					<h4>第三方账号登陆</h4>
+					<ul>
+						<li><a href="http://www.sina.com.cn/"><img src="img/login_ico/xl.jpg" alt="" /></a>
+						</li><li><a href="http://www.baidu.com.cn/"><img src="img/login_ico/bd.jpg" alt="" /></a>
+					</li><li><a href="http://www.qq.com.cn/"><img src="img/login_ico/qq.jpg" alt="" /></a>
+				</li><li><a href="http://www.github.com.cn/"><img src="img/login_ico/git.jpg" alt="" /></a></li>
+					</ul>
+					<span>还没有账号？</span>
+					<a class="signup" href="signup.html">注册账号</a>
+				</div>
+			</div>
+	</header>
+	<div class="pages">
+		<div class="pages_top">
+			<button class="release active_btn">发布</button>
+		</div>
+		<div class="pages_left">
+			<div class="left_menu">
+				<ul>
+					<li class="active_btn">二手汽车</li>
+					<li>二手房产</li>
+					<li>其他二手精品</li>
+				</ul>
+			</div>
+		</div>
+		<div class="pages_right">
+			<div id="car_color" class="options">
+				<span>汽车颜色:</span>
+				<input class="active_btn" type="button" name="" value="银色">
+				<input class="default_btn" type="button" name="" value="白色">
+				<input class="default_btn" type="button" name="" value="黑色">
+				<input class="default_btn" type="button" name="" value="红色">
+				<input class="default_btn" type="button" name="" value="灰色">
+				<input class="default_btn" type="button" name="" value="其他色">
+				<input class="default_btn" type="button" name="" value="不限">
+			</div>
+			<div class="options ">
+				<span>汽车品牌:</span>
+				<div id="brand_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="品牌不限">
+					<div class="downbox">
+						<ul>
+							<li>奥迪</a></li>
+							<li>奔驰</a></li>
+							<li>宝马</a></li>
+							<li>大众</a></li>
+							<li>丰田</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="car_type" class="options ">
+				<span>汽车类型:</span>
+				<input class="active_btn" type="button" name="" value="轿车">
+				<input class="default_btn" type="button" name="" value="越野">
+				<input class="default_btn" type="button" name="" value="跑车">
+				<input class="default_btn" type="button" name="" value="皮卡">
+				<input class="default_btn" type="button" name="" value="摩托车">
+				<input class="default_btn" type="button" name="" value="自行车">
+			</div>
+			<div class="options price">
+				<span>汽车价格:</span>
+				<input type="text" name="" placeholder="￥" value="">
+				万(澳元) -
+				<input type="text" name="" placeholder="￥" value="">
+				万(澳元)
+			</div>
+			<div class="options search_bar">
+				<span>选择城市:</span>
+				<div id="city_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="选择城市">
+					<div class="downbox">
+						<ul>
+							<li>悉尼</a></li>
+							<li>墨尔本</a></li>
+							<li>麦凯</a></li>
+							<li>珀斯</a></li>
+							<li>阿德莱德</a></li>
+						</ul>
+					</div>
+				</div>
+				<span>选择学校:</span>
+				<div id="school_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="学校不限">
+					<div class="downbox">
+						<ul>
+							<li>澳大利亚国立大学</a></li>
+							<li>澳大利亚悉尼大学</a></li>
+							<li>澳大利亚墨尔本大学</a></li>
+							<li>澳大利亚阿德雷德大学</a></li>
+							<li>澳大利亚莫纳什大学</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="map_toggle" class="tog_map hide_map">收起地图</div>
+				<button class="search_btn active_btn">搜索</button>
+			</div>
+			<div id="map_warp" class="map_outer">
+				<!-- 百度地图容器 -->
+				<div class="map_inner" id="map"></div>
+			</div>
+			<div class="sort">
+				<div class="sort_list default_sort">默认排序
+				</div><div class="sort_list prise_sort">价格排序<span>◇</span> 
+				</div><div class="sort_list">人气排序</div>
+			</div>
+			<div class="shop">
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+			</div>
+			<div class="paging_warp">
+				<div class="paging">
+					<ul>
+						<li class="item prev"><a href="javascript:viod;"><span><i>&lt;</i>上一页</span></a></li>
+						<li class="item active"><a href="javascript:viod;">1</a></li>
+						<li class="item"><a href="javascript:viod;">2</a></li>
+						<li class="item dot"><a href="javascript:viod;">…</a></li>
+						<li class="item"><a href="javascript:viod;">20</a></li>
+						<li class="item"><a href="javascript:viod;">25</a></li>
+						<li class="item"><a href="javascript:viod;">26</a></li>
+						<li class="item"><a href="javascript:viod;">27</a></li>
+						<li class="item dot"><a href="javascript:viod;">…</a></li>
+						<li class="item next"><a href="javascript:viod;"><span>下一页<i>&gt;</i></span></a></li>
+					</ul>
+					<div class="total">共50页</div>
+				</div>
+			</div>
+		</div>
+		<div class="pages_bottom">
+			
+		</div>
+
 	</div>
-	<footer></footer>
-	<script src="js/jquery-1.8.3.min.js"></script>
+	<footer >
+			<div class="ft_cont">
+				<div class="ft_cont_left">
+					<ul class="servicelink">
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">商务合作</a></li>
+						<li><a href="#">意见反馈</a></li>
+					</ul>
+				</div>
+				<div class="ft_cont_middle">
+					<p>欢迎来到海王扒</p>
+					<img src="img/2Dcode.jpg" alt="" />
+					<span>关注海王扒微信公众号</span>
+				</div>
+				<div class="ft_cont_right">
+					<h3>联系我们</h3>
+					<ul class="contact">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul>
+						<li><span>电话:028-88888888</span></li>
+						<li><span>邮箱:123456@sina.com</span></li>
+						<li><span>地址:成都市武侯区</span></li>
+					</ul>
+				</div>
+			</div>	
+	</footer>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$("header").load("header.html",function(){
-				//所在页面导航下边框显示
-				$("#nav_ul").children().eq(2).addClass('active');
+			downPull($('#brand_selects'));//下拉菜单
+			downPull($('#city_selects'));
+			downPull($('#school_selects'));
+			sortList($('.sort_list'));//排序列表
+			toggleBtn($('#car_color'));//点击选择按钮
+			toggleBtn($('#car_type'));
+			showMap($('#map_toggle'),$('#map_warp'));//展开显示地图
+		});
+		//下拉菜单
+		function downPull(obj){
+			obj.on('click',function(){
+				obj.find('.downbox').toggle();
 			});
-			$("footer").load("footer.html");
-			
-		})
+			obj.find('li').on('click',function(){
+				obj.find('input').val($(this).html());
+			});
+		};
+		//排序列表
+		function sortList(obj){
+			obj.on('click',function(){
+				obj.css('color','#666');
+				$(this).css('color','orange');
+				if ($(this).attr('class')=='sort_list prise_sort') {
+					$(this).attr('class','sort_list');
+				}else{
+					$(this).attr('class','sort_list prise_sort');
+				}
+			});
+		}
+		//点击选择按钮
+		function toggleBtn(obj){
+			obj.find('input').on('click',function(){
+				obj.find('input').attr('class','default_btn');
+				$(this).attr('class','active_btn');
+			});
+		}
+		//展开显示地图
+		function showMap(obj,Target){
+			obj.on('click',function(){
+				if ($(this).html()=='收起地图') {
+					$(this).html('展开地图').attr('class','tog_map show_map');
+					Target.slideUp();
+				}else{
+					$(this).html('收起地图').attr('class','tog_map hide_map');
+					Target.slideDown();
+				}
+			});
+		}
 	</script>
+	<!-- 百度地图 -->
+	<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(104.118792,30.665179),12);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:1});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
 </body>
 </html>

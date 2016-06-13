@@ -1,7 +1,346 @@
-// car
+/*公用组件*/
+.default_btn,
+.left_menu li,
+.active_btn{
+	height: 38px;
+	padding: 0 24px;
+	color: #666;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-family: '微软雅黑';
+	background-color: white;
+	cursor: pointer;
+	outline: none;
+}
+.default_btn:hover,
+.active_btn{
+	color: white;
+	border-color: #4d8be6;
+	background-color: #4d8be6;
+	cursor: pointer;
+}
+.default_selects{
+	display: inline-block;
+	position: relative;
+	color: #666;
+	cursor: pointer;
+}
+.default_selects input{
+	height: 38px;
+	width: 148px;
+	border: 1px solid #ddd;
+	padding: 0 40px 0 10px;
+	border-radius: 2px;
+	color: #666;
+	font-size: 14px;
+	outline: none;
+	background: #fff url(../img/icon/downpull.png) no-repeat 168px 0px;
+	cursor: pointer;
+}
+.default_selects input:hover{
+	background: #eee url(../img/icon/downpull.png) no-repeat 168px -40px;
+}
+.default_selects .downbox{
+	display: none;
+	position: absolute;
+	top: 38px;
+	z-index: 20;
+	width: 198px;
+	border: 1px solid #ddd;
+	background: white;
+}
+.default_selects .downbox li{
+	font-size: 14px;
+	padding: 5px 0 5px 10px;
+}
+.default_selects .downbox li:hover{
+	background: #eee;
+}
+/*商品列表*/
+.shop{
+	padding-top: 30px;
+	font-size: 0;
+}
+.wares{
+	width: 210px;
+	height: 260px;
+	margin-left: 12px;
+	display: inline-block;
+}
+.wares .wares_inner{
+	width: 100%;
+	height: 200px;
+	position: relative;
+}
+.wares .wares_inner a{
+	display: inline-block;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+.wares .wares_inner .wares_tips{
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.3);
+	cursor: pointer;
+}
+.wares .wares_inner .wares_tips span{
+	display: inline-block;
+	width: 104px;
+	height: 100%;
+	color: white;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+.wares .wares_inner .wares_tips span:first-child{
+	border-right: 1px solid white;
+	width: 105px;
+}
+.wares h3,
+.wares p{
+	color: #666;
+	line-height: 24px;
+}
+.wares h3{
+	margin-top: 8px;
+	font-size: 14px;
+}
+.wares p{
+	font-size: 12px;
+}
+/*分页样式*/
+.paging{
+	width: 500px;
+	height: 100%;
+	margin: 0 auto;
+	display: inline-block;
+}
+.paging ul{
+	font-size: 0;
+	display: inline-block;
+}
+.paging ul li.item{
+	display: inline-block;
+	width: 34px;
+	height: 34px;
+	text-align: center;
+	border: 1px solid #ddd;
+	margin-left: -1px;
+	line-height: 34px;
+}
+.paging ul li.item a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #666;
+}
+.paging ul li.item:hover a{
+	color: orange;
+}
+.paging ul li.item:hover,
+.paging ul li.active{
+	position: relative;
+	z-index: 2;
+	border-color: orange;
+}
+.paging ul li.active:hover a,
+.paging ul li.active a{
+	color: white;
+	background-color: orange;
+}
+.paging ul li i{
+	font-family: '宋体';
+	font-style: normal;
+}
+.paging ul li.prev,
+.paging ul li.next{
+	width: 70px;
+}
+.paging ul li.prev{
+	margin-right: 5px;
+}
+.paging ul li.next{
+	margin-left: 5px;
+}
+.paging ul li.dot,
+.paging ul li.dot:hover{
+	border:none;
+}
+.paging ul li.dot:hover a{
+	color: #666;
+}
+.paging .total{
+	display: inline-block;
+	line-height: 36px;
+	font-size: 12px;
+	color: #999;
+}
+/*=============私有样式==============*/
 .pages{
-	width: 1200px; 
-	height: 1000px;
-	background-color: red;
+	width: 1198px; 
+	margin: 90px auto 0;
+	border: 1px solid #ddd;
+}
+.pages_top{
+	width: 100%;
+	height: 70px;
+	position: relative;
+}
+.pages_top .release,
+.pages_right .options .search_btn{
+	position: absolute;
+	right: 60px;
+	top: 50%;
+	margin-top: -20px;
+}
+.pages_left{
+	width: 240px;
+	margin-left: 32px;
+	float: left;
+}
+.left_menu{
+	width: 238px;
+	border-radius: 5px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+}
+.left_menu li{
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	color: #666;
+	border: none;
+	border-bottom: 1px solid #eee;
+}
+.left_menu li.active_btn{
+	border-radius: 0;
+	color: white;
+	background-color: #4d8be6;
+}
+.pages_right{
+	width: 898px;
+	border-left: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	float: right;
+}
+.pages_right .options{
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+.pages_right .options span{
+	margin: 0 10px 0 30px;
+	line-height: 70px;
+	color: #666;
+}
+.pages_right .options .default_btn,
+.pages_right .options .active_btn{
+	padding: 0 20px;
+	margin-right: 20px;
+}
+.pages_right .price input{
+	height: 38px;
+	width: 45px;
+	padding: 0 5px ;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	text-decoration: center;
+	outline: none;
+	color: #666;
+	font-family: '微软雅黑';
+}
+.pages_right .options .tog_map{
+	display: inline-block;
+	width: 60px;
+	height: 20px;
+	color: #666;
+	padding-right: 20px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.pages_right .options .show_map{
+	background: #fff url(../img/icon/downpull.png) no-repeat 58px -10px;
+}
+.pages_right .options .show_map:hover{
+	color: orange;
+	background: #fff url(../img/icon/downpull.png) no-repeat 58px -80px;
+}
+.pages_right .options .hide_map{
+	background: #fff url(../img/icon/downpull.png) no-repeat 58px -120px;
+}
+.pages_right .options .hide_map:hover{
+	color: orange;
+	background: #fff url(../img/icon/downpull.png) no-repeat 58px -100px;
+}
+.pages_right .search_bar{
+	border-bottom: none; 
+}
+.pages_right .options .search_btn{
+	margin-right: 0;
+}
 
+.pages_right .map_outer{
+	height: 420px;
+}
+.pages_right .map_outer .map_inner{
+	width: 860px;
+	height: 400px;
+	margin: 0 auto;
+	position: relative;
+	border:#ddd solid 1px;
+	font-size:12px
+}
+.pages_right .sort{
+	width: 100%;
+	height: 40px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	background-color: #f7f7f7;
+}
+.pages_right .sort_list{
+	width: 100px;
+	height: 100%;
+	text-align: center;
+	display: inline-block;
+	line-height: 40px;
+	background-color: white;
+	border-right: 1px solid #ddd; 
+	font-size: 14px;
+	color: #666;
+	position: relative;
+	cursor: pointer;
+}
+.pages_right .sort_list span{
+	display: inline-block;
+	font-size: 28px;
+	height: 7px;
+	position: relative;
+	line-height: 14px;
+	overflow: hidden;
+		top: -2px;
+}
+.pages_right .prise_sort span{
+	line-height: 0px;
+	top: 0;
+}
+.pages_right .sort .default_sort{
+	color: orange;
+}
+.paging_warp{
+	width: 100%;
+	padding: 50px 0;
+	height: 36px;
+}
+.paging_warp .paging{
+	margin-left: 240px;
+}
+.pages_bottom{
+	width: 100%;
+	clear: both;
+	/*height: 50px;
+	padding: 30px 0;*/
 }
