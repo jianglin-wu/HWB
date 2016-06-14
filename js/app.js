@@ -63,4 +63,8 @@ $(function(){
 
 	//下拉多选框
 	downPull($('#catalog_selects'));
+	downPull($('#city_selects'));
+	//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
+	toggleBtn($('#filter_inner'));
+
 });

@@ -92,38 +92,42 @@
 		<!-- benner以下内容部分 -->
 		<div class="container">
 				<div class="filter_warp">
-					<div class="filter_inner">
+					<div id="filter_inner" class="filter_inner">
 						<form>
 							<div id="catalog_selects" class="default_selects">
 								<input class="selects_input" type="text" name="" readonly="readonly" value="选择目录">
 								<div class="downbox">
 									<ul>
-										<li><a href="">二手汽车</a></li>
-										<li>墨尔本</a></li>
-										<li>麦凯</a></li>
+										<li>二手汽车</li>
+										<li>二手家具</li>
+										<li>二手家电</li>
+										<li>二手房产</li>
 									</ul>
 								</div>
 							</div>
-							<input id="btn1" class="sell_btn" type="button" value="出售" />
-							<input class="buy_btn" type="button" value="购买" />
+							<input class="btn active_btn" type="button" value="购买" />
+							<input class="btn default_btn" type="button" value="出售" />
 					
-							<select id="region" class="place"  >
-								<option>地区</option>
-								<option>悉尼</option>
-								<option>墨尔本</option>
-								<option>麦凯</option>
-								<option>珀斯</option>
-								<option>阿德莱德</option>
-							</select>
-							<input id="unlimited" type="checkbox" />
-							<label for="unlimited">不限</label>
-							<input type="submit" value="匹配" />
+							<div id="city_selects" class="default_selects">
+								<input class="selects_input" type="text" name="" readonly="readonly" value="选择城市">
+								<div class="downbox">
+									<ul>
+										<li>悉尼</li>
+										<li>墨尔本</li>
+										<li>麦凯</li>
+										<li>珀斯</li>
+										<li>阿德莱德</li>
+										<li>不限</li>
+									</ul>
+								</div>
+							</div>
+							<input class="right active_btn" type="submit" value="匹配" />
 						</form>
 					</div>
 				</div>
 				<hr />
 				<h2>二手精品</h2>
-				<p>毕业甩货，入学淘货</p>
+				<p class="f_title">毕业甩货，入学淘货</p>
 				<ul class="products_nav">
 					<li class="products_1"><a href="#">
 						<h3>二手房产</h3>
@@ -138,74 +142,134 @@
 				</ul>
 				<hr class="hr_middle" />
 				<div class="product_list">
-					<ul class="product_keyword">
-						<li>全部</li>
-						<li>轿车</li>
-						<li>皮卡</li>
-						<li>越野</li>
-						<li>摩托</li>
-						<li>跑车</li>
-					</ul>
-					<div class="rest">换一换</div>
-					<ul class="product_cont">
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_1.jpg" alt="" /></a>
+					<div class="word_filer">
+						<ul class="product_keyword">
+							<li>全部</li>
+							<li>轿车</li>
+							<li>皮卡</li>
+							<li>越野</li>
+							<li>摩托</li>
+							<li>跑车</li>
+						</ul>
+						<div class="rest">换一换</div>
+					</div>
+					<div class="shop">
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_2.jpg" alt="" /></a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_3.jpg" alt="" /></a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_4.jpg" alt="" /></a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_1.jpg" alt="" /></a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_2.jpg" alt="" /></a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_3.jpg" alt="" /></a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
 							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#">查看更多&gt;&gt;</a>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
 							</div>
-							<h3>&nbsp;</h3>
-							<p>&nbsp;</p>
-						</li>
-					</ul>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+								<div class="wares_tips">
+									<span>$280/周</span><span>单间出租</span>
+								</div></a>
+							</div>
+							<h3>约克星花园别墅</h3>
+							<p>独栋别墅 6卧室 2卫浴 2车位</p>
+						</div>
+						<div class="wares last">
+							<div class="wares_inner">
+								<a href="javascript: viod;"><h3>查看更多<span>>></span></h3></a>
+							</div>
+						</div>		
+					</div>
 				</div>
 		</div>
 		<footer>
