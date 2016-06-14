@@ -1,16 +1,24 @@
 body,head,footer,
 ul,li,a,h1,h2,h3,
 h4,h5,h6,p,form,
-input[type="checkbox"],
-input[type="button"]{
-	padding: 0;margin: 0;}
+input{
+		padding: 0;
+		margin: 0;}
 body{font-size: 14px;
 	font-family: "微软雅黑";}
 a,input{
 		outline: none;}
 a{
 	text-decoration: none;}
-ul{font-size: 0px;
+img{
+	border: none;
+	max-width: 100%;
+}
+label {
+    cursor: pointer;
+}
+ul{
+	font-size: 0px;
 	list-style: none;}
 li{font-size: 12px;}
 header,footer{display: block;}
