@@ -84,13 +84,13 @@
 		<div class="pages_right">
 			<div id="car_color" class="options">
 				<span>汽车颜色:</span>
-				<input class="active_btn" type="button" name="" value="银色">
-				<input class="default_btn" type="button" name="" value="白色">
-				<input class="default_btn" type="button" name="" value="黑色">
-				<input class="default_btn" type="button" name="" value="红色">
-				<input class="default_btn" type="button" name="" value="灰色">
-				<input class="default_btn" type="button" name="" value="其他色">
-				<input class="default_btn" type="button" name="" value="不限">
+				<input class="btn active_btn" type="button" name="" value="银色">
+				<input class="btn default_btn" type="button" name="" value="白色">
+				<input class="btn default_btn" type="button" name="" value="黑色">
+				<input class="btn default_btn" type="button" name="" value="红色">
+				<input class="btn default_btn" type="button" name="" value="灰色">
+				<input class="btn default_btn" type="button" name="" value="其他色">
+				<input class="btn default_btn" type="button" name="" value="不限">
 			</div>
 			<div class="options ">
 				<span>汽车品牌:</span>
@@ -98,23 +98,23 @@
 					<input class="selects_input" type="text" name="" readonly="readonly" value="品牌不限">
 					<div class="downbox">
 						<ul>
-							<li>奥迪</a></li>
-							<li>奔驰</a></li>
-							<li>宝马</a></li>
-							<li>大众</a></li>
-							<li>丰田</a></li>
+							<li>奥迪</li>
+							<li>奔驰</li>
+							<li>宝马</li>
+							<li>大众</li>
+							<li>丰田</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div id="car_type" class="options ">
 				<span>汽车类型:</span>
-				<input class="active_btn" type="button" name="" value="轿车">
-				<input class="default_btn" type="button" name="" value="越野">
-				<input class="default_btn" type="button" name="" value="跑车">
-				<input class="default_btn" type="button" name="" value="皮卡">
-				<input class="default_btn" type="button" name="" value="摩托车">
-				<input class="default_btn" type="button" name="" value="自行车">
+				<input class="btn active_btn" type="button" name="" value="轿车">
+				<input class="btn default_btn" type="button" name="" value="越野">
+				<input class="btn default_btn" type="button" name="" value="跑车">
+				<input class="btn default_btn" type="button" name="" value="皮卡">
+				<input class="btn default_btn" type="button" name="" value="摩托车">
+				<input class="btn default_btn" type="button" name="" value="自行车">
 			</div>
 			<div class="options price">
 				<span>汽车价格:</span>
@@ -129,11 +129,11 @@
 					<input class="selects_input" type="text" name="" readonly="readonly" value="选择城市">
 					<div class="downbox">
 						<ul>
-							<li>悉尼</a></li>
-							<li>墨尔本</a></li>
-							<li>麦凯</a></li>
-							<li>珀斯</a></li>
-							<li>阿德莱德</a></li>
+							<li>悉尼</li>
+							<li>墨尔本</li>
+							<li>麦凯</li>
+							<li>珀斯</li>
+							<li>阿德莱德</li>
 						</ul>
 					</div>
 				</div>
@@ -142,11 +142,11 @@
 					<input class="selects_input" type="text" name="" readonly="readonly" value="学校不限">
 					<div class="downbox">
 						<ul>
-							<li>澳大利亚国立大学</a></li>
-							<li>澳大利亚悉尼大学</a></li>
-							<li>澳大利亚墨尔本大学</a></li>
-							<li>澳大利亚阿德雷德大学</a></li>
-							<li>澳大利亚莫纳什大学</a></li>
+							<li>澳大利亚国立大学</li>
+							<li>澳大利亚悉尼大学</li>
+							<li>澳大利亚墨尔本大学</li>
+							<li>澳大利亚阿德雷德大学</li>
+							<li>澳大利亚莫纳什大学</li>
 						</ul>
 					</div>
 				</div>
@@ -343,54 +343,16 @@
 	<script type="text/javascript" src="js/public.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			downPull($('#brand_selects'));//下拉菜单
+			//下拉菜单，传入下拉框div元素
+			downPull($('#brand_selects'));
 			downPull($('#city_selects'));
 			downPull($('#school_selects'));
 			sortList($('.sort_list'));//排序列表
-			toggleBtn($('#car_color'));//点击选择按钮
+			//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
+			toggleBtn($('#car_color'));
 			toggleBtn($('#car_type'));
 			showMap($('#map_toggle'),$('#map_warp'));//展开显示地图
 		});
-		//下拉菜单
-		function downPull(obj){
-			obj.on('click',function(){
-				obj.find('.downbox').toggle();
-			});
-			obj.find('li').on('click',function(){
-				obj.find('input').val($(this).html());
-			});
-		};
-		//排序列表
-		function sortList(obj){
-			obj.on('click',function(){
-				obj.css('color','#666');
-				$(this).css('color','orange');
-				if ($(this).attr('class')=='sort_list prise_sort') {
-					$(this).attr('class','sort_list');
-				}else{
-					$(this).attr('class','sort_list prise_sort');
-				}
-			});
-		}
-		//点击选择按钮
-		function toggleBtn(obj){
-			obj.find('input').on('click',function(){
-				obj.find('input').attr('class','default_btn');
-				$(this).attr('class','active_btn');
-			});
-		}
-		//展开显示地图
-		function showMap(obj,Target){
-			obj.on('click',function(){
-				if ($(this).html()=='收起地图') {
-					$(this).html('展开地图').attr('class','tog_map show_map');
-					Target.slideUp();
-				}else{
-					$(this).html('收起地图').attr('class','tog_map hide_map');
-					Target.slideDown();
-				}
-			});
-		}
 	</script>
 	<!-- 百度地图 -->
 	<script type="text/javascript">

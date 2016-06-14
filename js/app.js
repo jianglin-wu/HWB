@@ -1,17 +1,17 @@
-//背景轮播
-function bgMove(){
+//传入对象 背景轮播
+function bgMove(obj){
 	var i=0;
-	var size=$('.home_banner li').size();
-	$('.home_banner li').hide();
-	$('.home_banner li').eq(0).show();
+	var size=obj.length;
+	obj.hide();
+	obj.eq(0).show();
 	setInterval(move,5000);
 	function move(){
 		i++;
 		if(i==size){
 			i=0;
 		}
-		$('.home_banner li').fadeOut(1000);
-		$('.home_banner li').eq(i).fadeIn(1000);
+		obj.fadeOut(1000);
+		obj.eq(i).fadeIn(1000);
 	}
 }
 
@@ -25,48 +25,8 @@ function btnSwich(btnDown,btnUp){
 //main
 $(function(){
 
-	//login登陆框拖动
-	$("#login_drag").draggable();
-
-	//输入框清除内容功能
-	$(".text_box").focus(function(){
-		$(this).keydown(function(){
-			$(this).next().next().css('display','block');
-		});
-		$(this).change(function(){
-			$(this).next().next().css('display','block');
-		});
-		if ($(this).val()!=='') {	
-			$(this).next().next().css('display','block');
-		}
-	});
-	$(".text_box").blur(function(){
-			$(this).next().next().css('display','none');
-	});
-	$('.input_reset').on('mousedown',function(){
-		$(this).prev().prev().val("");
-		$(this).css({'display':'none'});
-	});
-	$(".search_submite").on('click',function(){
-		alert('你提交的内容：'+$(this).prev().val());
-	});
-
-	//登陆弹出框
-	$('.login').click(function(){
-		$('.login_wrap').show();
-	});
-	
-	$('.login_wrap strong').click(function(){
-		$('.login_wrap').hide();
-	});
-
-	
-
-	//banner轮播
-	bgMove();
-	
 	//选项条按钮点击效果切换
-	$('.sell_btn').click(function(){
+	$('.sell_btn').on('click',function(){
 		btnSwich('.sell_btn','.buy_btn');
 	});
 	$('.buy_btn').click(function(){
@@ -98,5 +58,9 @@ $(function(){
 	});
 	
 	
-	
+	//传入对象 背景轮播
+	bgMove($('.home_banner li'));
+
+	//下拉多选框
+	downPull($('#catalog_selects'));
 });

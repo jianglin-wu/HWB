@@ -84,9 +84,9 @@
 					</form>
 				</div>
 				<ul class="home_banner">
-				<li><img src="img/banner/banner1.jpg" alt="" /></li>
-				<li><img src="img/banner/banner2.jpg" alt="" /></li>
-				<li><img src="img/banner/banner3.jpg" alt="" /></li>
+				<li><img src="img/picture/banner1.jpg" alt="" /></li>
+				<li><img src="img/picture/banner2.jpg" alt="" /></li>
+				<li><img src="img/picture/banner3.jpg" alt="" /></li>
 				</ul>
 		</div>
 		<!-- benner以下内容部分 -->
@@ -94,13 +94,17 @@
 				<div class="filter_warp">
 					<div class="filter_inner">
 						<form>
-							<select class="classify" >
-								<option>选择目录</option>
-								<option>二手汽车</option>
-								<option>二手家具</option>
-								<option>二手家电</option>
-							</select>
-							<input class="sell_btn" type="button" value="出售" />
+							<div id="catalog_selects" class="default_selects">
+								<input class="selects_input" type="text" name="" readonly="readonly" value="选择目录">
+								<div class="downbox">
+									<ul>
+										<li><a href="">二手汽车</a></li>
+										<li>墨尔本</a></li>
+										<li>麦凯</a></li>
+									</ul>
+								</div>
+							</div>
+							<input id="btn1" class="sell_btn" type="button" value="出售" />
 							<input class="buy_btn" type="button" value="购买" />
 					
 							<select id="region" class="place"  >
@@ -240,5 +244,9 @@
 		<script type="text/javascript" src="js/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/ajax.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script>
+	
+		</script>
 	</body>
 </html>
