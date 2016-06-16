@@ -26,8 +26,8 @@
 					<ul id="nav_ul">
 						<li><a href="index.html">首页</a>
 						</li><li><a href="house.html">房屋租凭</a>
-						</li><li class="active"><a href="car.html">汽车交易</a>
-						</li><li><a href="other.html">其他精品</a></li>
+						</li><li><a href="car.html">汽车交易</a>
+						</li><li class="active"><a href="other.html">其他精品</a></li>
 					</ul>
 				</nav>
 				<div class="user"><img src="img/portrait.jpg" alt="" /></div>
@@ -76,58 +76,81 @@
 			<div class="left_menu">
 				<ul>
 					<li><a href="house.html">二手房产</a></li>
-					<li class="active_btn"><a href="car.html">二手汽车</a></li>
-					<li><a href="other.html">其他二手精品</a></li>
+					<li><a href="car.html">二手汽车</a></li>
+					<li class="active_btn"><a href="other.html">其他二手精品</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="pages_right">
 			<div id="car_color" class="options">
-				<span>汽车颜色:</span>
-				<input class="btn active_btn" type="button" name="" value="银色">
-				<input class="btn default_btn" type="button" name="" value="白色">
-				<input class="btn default_btn" type="button" name="" value="黑色">
-				<input class="btn default_btn" type="button" name="" value="红色">
-				<input class="btn default_btn" type="button" name="" value="灰色">
-				<input class="btn default_btn" type="button" name="" value="其他色">
-				<input class="btn default_btn" type="button" name="" value="不限">
+				<span>类别:</span>
+				<input class="btn active_btn" type="button" name="" value="手机">
+				<input class="btn default_btn" type="button" name="" value="数码">
+				<input class="btn default_btn" type="button" name="" value="电脑">
+				<input class="btn default_btn" type="button" name="" value="家电">
+				<input class="btn default_btn" type="button" name="" value="家具">
+				<input class="btn default_btn" type="button" name="" value="生活用品">
+				<input class="btn default_btn" type="button" name="" value="图书影像">
 			</div>
 			<div class="options ">
-				<span>汽车品牌:</span>
-				<div id="brand_selects" class="default_selects">
-					<input class="selects_input" type="text" name="" readonly="readonly" value="品牌不限">
+				<span>筛选:</span>
+				<div id="floor_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="新旧">
 					<div class="downbox">
 						<ul>
-							<li>奥迪</li>
-							<li>奔驰</li>
-							<li>宝马</li>
-							<li>大众</li>
-							<li>丰田</li>
+							<li>不限</li>
+							<li>全新</li>
+							<li>9成新</li>
+							<li>8成新</li>
+							<li>7成新及以下</li>
+						</ul>
+					</div>
+				</div>
+				<div id="direction_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="卖家">
+					<div class="downbox">
+						<ul>
+							<li>不限</li>
+							<li>个人</li>
+							<li>商家</li>
+							<li>品牌专卖</li>
+						</ul>
+					</div>
+				</div>
+				<div id="age_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="更新时间">
+					<div class="downbox">
+						<ul>
+							<li>今天</li>
+							<li>3天以内</li>
+							<li>1周以内</li>
+							<li>2周以内</li>
+							<li>1个月以内</li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div id="car_type" class="options ">
-				<span>汽车类型:</span>
-				<input class="btn active_btn" type="button" name="" value="轿车">
-				<input class="btn default_btn" type="button" name="" value="越野">
-				<input class="btn default_btn" type="button" name="" value="跑车">
-				<input class="btn default_btn" type="button" name="" value="皮卡">
-				<input class="btn default_btn" type="button" name="" value="摩托车">
-				<input class="btn default_btn" type="button" name="" value="自行车">
+			<div id="car_type" class="options" style="display:none;">
+				<span>房型:</span>
+				<input class="btn active_btn" type="button" name="" value="不限">
+				<input class="btn default_btn" type="button" name="" value="一室">
+				<input class="btn default_btn" type="button" name="" value="二室">
+				<input class="btn default_btn" type="button" name="" value="三室">
+				<input class="btn default_btn" type="button" name="" value="四室">
+				<input class="btn default_btn" type="button" name="" value="四室以上">
 			</div>
 			<div id="price_bar" class="options price">
 				<span>价格:</span>
 				<input class="btn active_btn" type="button" name="" value="不限">
-				<input class="btn default_btn" type="button" name="" value="20万以下">
-				<input class="btn default_btn" type="button" name="" value="20-50万">
-				<input class="btn default_btn" type="button" name="" value="50-100万">
-				<input class="btn default_btn" type="button" name="" value="100万以上">
+				<input class="btn default_btn" type="button" name="" value="300以下">
+				<input class="btn default_btn" type="button" name="" value="300-700元">
+				<input class="btn default_btn" type="button" name="" value="700-1500元">
+				<input class="btn default_btn" type="button" name="" value="1500以上">
 				<div class="ipt_box">
 					<input class="price_ipt" type="text" name="" placeholder="￥" value="">
-					万 -
+					元 -
 					<input class="price_ipt" type="text" name="" placeholder="￥" value="">
-					万
+					元
 				</div>
 			</div>
 			<div class="options search_bar">
@@ -352,7 +375,9 @@
 	<script type="text/javascript">
 		$(function(){
 			//下拉菜单，传入下拉框div元素
-			downPull($('#brand_selects'));
+			downPull($('#floor_selects'));
+			downPull($('#direction_selects'));
+			downPull($('#age_selects'));
 			downPull($('#city_selects'));
 			downPull($('#school_selects'));
 			sortList($('.sort_list'));//排序列表

@@ -94,7 +94,7 @@ header{
 	height: 60px;
 	margin: 0 auto;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 }
 .top_warp .top_logo{
 	display: inline-block;
@@ -153,6 +153,7 @@ header{
 	text-align: center;
 	cursor: pointer;
 	float: right;
+	// border: 1px solid cyan;
 }
 /*定位靠左样式，未登录使用该属性*/
 .top_warp .cent_locat{

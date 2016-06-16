@@ -37,6 +37,7 @@
 }
 .left_menu li.active_btn{
 	border-radius: 0;
+	border-bottom-color: #4d8be6;
 	background-color: #4d8be6;
 }
 .left_menu li a{
@@ -75,10 +76,11 @@
 	font-size: 12px;
 	display: inline-block;
 	margin-left: -10px;
+	color: #666;
 }
 .pages_right .price .ipt_box input.price_ipt{
-	height: 38px;
-	width: 45px;
+	height: 20px;
+	width: 32px;
 	padding: 0 5px ;
 	border: 1px solid #ddd;
 	border-radius: 4px;
@@ -175,6 +177,4 @@
 .pages_bottom{
 	width: 100%;
 	clear: both;
-	/*height: 50px;
-	padding: 30px 0;*/
 }
