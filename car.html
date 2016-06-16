@@ -75,9 +75,9 @@
 		<div class="pages_left">
 			<div class="left_menu">
 				<ul>
-					<li class="active_btn">二手汽车</li>
-					<li>二手房产</li>
-					<li>其他二手精品</li>
+					<li class="active_btn"><a href="car.html">二手汽车</a></li>
+					<li><a href="house.html">二手房产</a></li>
+					<li><a href="#">其他二手精品</a></li>
 				</ul>
 			</div>
 		</div>
@@ -116,12 +116,19 @@
 				<input class="btn default_btn" type="button" name="" value="摩托车">
 				<input class="btn default_btn" type="button" name="" value="自行车">
 			</div>
-			<div class="options price">
-				<span>汽车价格:</span>
-				<input type="text" name="" placeholder="￥" value="">
-				万(澳元) -
-				<input type="text" name="" placeholder="￥" value="">
-				万(澳元)
+			<div id="price_bar" class="options price">
+				<span>价格:</span>
+				<input class="btn active_btn" type="button" name="" value="不限">
+				<input class="btn default_btn" type="button" name="" value="20万以下">
+				<input class="btn default_btn" type="button" name="" value="20-50万">
+				<input class="btn default_btn" type="button" name="" value="50-100万">
+				<input class="btn default_btn" type="button" name="" value="100万以上">
+				<div class="ipt_box">
+					<input class="price_ipt" type="text" name="" placeholder="￥" value="">
+					万(澳元) -
+					<input class="price_ipt" type="text" name="" placeholder="￥" value="">
+					万(澳元)
+				</div>
 			</div>
 			<div class="options search_bar">
 				<span>选择城市:</span>
@@ -160,7 +167,8 @@
 			<div class="sort">
 				<div class="sort_list default_sort">默认排序
 				</div><div class="sort_list prise_sort">价格排序<span>◇</span> 
-				</div><div class="sort_list">人气排序</div>
+				</div><div class="sort_list">人气排序
+				</div><div class="sort_list">最新</div>
 			</div>
 			<div class="shop">
 				<div class="wares">
@@ -350,6 +358,7 @@
 			sortList($('.sort_list'));//排序列表
 			//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
 			toggleBtn($('#car_color'));
+			toggleBtn($('#price_bar'));
 			toggleBtn($('#car_type'));
 			showMap($('#map_toggle'),$('#map_warp'));//展开显示地图
 		});

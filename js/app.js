@@ -14,28 +14,28 @@ function bgMove(obj){
 		obj.eq(i).fadeIn(1000);
 	}
 }
-
+//使用ajax配合json修改页面数据 此处传入两个数（被点击li的父级，被修改的元素集）
+function ajaxPages(btnLi,Target){
+	var j=0;
+	btnLi.find('li').each(function(){
+		btnLi.find('li').eq(j).click(function(){
+			ajax('json/product_keyword'+($(this).index()+1)+'.json',function(srt){
+				var aData=eval(srt);
+					Target.each(function(){
+					Target.find('img').eq($(this).index()).attr('src',aData[$(this).index()].src);
+					Target.find('h3').eq($(this).index()).html(aData[$(this).index()].h3);
+					Target.find('p').eq($(this).index()).html(aData[$(this).index()].p);
+				});
+			});
+		});
+		j++;
+	});
+}
 
 //main
 $(function(){
-
-	
-	//ajax关键词分页
-	var j=0;
-	$('.product_keyword li').each(function(){
-		$('.product_keyword li').eq(j).click(function(){
-			ajax('json/product_keyword'+($(this).index()+1)+'.json',function(srt){
-				var aData=eval(srt);
-				$('.product_list .shop .wares').each(function(){
-					$('.product_list .shop .wares img').eq($(this).index()).attr('src',aData[$(this).index()].src);
-					$('.product_list .shop .wares h3').eq($(this).index()).html(aData[$(this).index()].h3);
-					$('.product_list .shop .wares p').eq($(this).index()).html(aData[$(this).index()].p);
-				})
-			})
-		})
-		j++;
-	});
-	
+	//使用ajax配合json修改页面数据 此处传入两个数（被点击li的父级，被修改的元素集）
+	ajaxPages($('.product_keyword'),$('.product_list .shop .wares'));
 	
 	//传入对象 背景轮播
 	bgMove($('.home_banner li'));

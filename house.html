@@ -2,135 +2,429 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>房屋租赁——海王扒</title>
+	<title>汽车交易——海王扒</title>
 	<link rel="shortcut icon" href="img/favicon48x48.jpg" type="image/x-icon" />
 	<link rel="stylesheet" href="css/public.css">
+	<link rel="stylesheet" href="css/car.css">
+	<!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=keBQ0XKKzfpHLNMT2m9AbyxfUxHUEBxf"></script>
 </head>
 <body>
-	<header></header>
-			<div class="container">
-				<hr style="margin-top:100px" />
-				<h2>二手精品</h2>
-				<p>毕业甩货，入学淘货</p>
-				<div class="searchwrap" style="margin:0;margin-top:10px">
-					<div class="searchcriteria">
+	<header>
+			<!-- 顶部导航条 -->
+			<div class="top_warp">
+				<a class="top_logo" href="#"><img src="img/logo-ico.png" title="" alt="logo"/></a>
+				<div class="search">
+					<form>
+						<input class="search_txt text_box" type="text" name="top_search_text"  placeholder="请输入关键字" />
+						<a class="search_submite" href="javascript:void(0);"></a>
+						<!-- 重置输入框内容 -->
+						<span class="input_reset"></span>
+					</form>
+				</div>
+				<nav class="nav_top">
+					<ul id="nav_ul">
+						<li><a href="index.html">首页</a>
+						</li><li class="active"><a href="house.html">房屋租凭</a>
+						</li><li><a href="car.html">汽车交易</a>
+						</li><li><a href="publish.html">物品发布</a>
+					</ul>
+				</nav>
+				<div class="user"><img src="img/portrait.jpg" alt="" /></div>
+				<a class="register top_btn" href="signup.html">注册</a>
+				<div class="login top_btn">登陆</div>
+				<div class="location cent_locat">定位</div>
+				<div class="messages">消息
+				<span>99+</span></div>
+			</div>
+			<!-- 登陆框组件 -->
+			<div id="login_drag" class="login_wrap">
+				<div class="login_top">
+						<strong></strong>
+						<h4>账号登陆</h4>
 						<form>
-							<select class="classify" value="456">
-								<option>选择目录</option>
-								<option>二手汽车</option>
-								<option>二手家具</option>
-								<option>二手家电</option>
-							</select>
-							<input class="sell_btn" type="button" value="出售" />
-							<input class="buy_btn" type="button" value="购买" />
-					
-							<select class="place" >
-								<option>地区</option>
-								<option>悉尼1</option>
-								<option>悉尼2</option>
-								<option>悉尼3</option>
-							</select>
-							<input id="unlimited" type="checkbox" />
-							<label for="unlimited">不限</label>
-							<input type="submit" value="匹配" />
+							<input class="login-user text_box" type="text" value="" placeholder="输入用户名/邮箱"/>
+							<br />
+							<span class="input_reset user_box"></span>
+							<input class="login-pass text_box" type="password" value="" placeholder="输入密码"/>
+							<i></i>
+							<span class="input_reset pass_box"></span>
+							<input id="login-checkbox" type="checkbox">
+							<label for="login-checkbox">下次自动登陆</label>
+							<a href="#">忘记密码</a>
+							<input class="login-btn" type="button" value="登陆" />
 						</form>
+				</div>
+				<div class="login_btm">
+					<h4>第三方账号登陆</h4>
+					<ul>
+						<li><a href="http://www.sina.com.cn/"><img src="img/login_ico/xl.jpg" alt="" /></a>
+						</li><li><a href="http://www.baidu.com.cn/"><img src="img/login_ico/bd.jpg" alt="" /></a>
+					</li><li><a href="http://www.qq.com.cn/"><img src="img/login_ico/qq.jpg" alt="" /></a>
+				</li><li><a href="http://www.github.com.cn/"><img src="img/login_ico/git.jpg" alt="" /></a></li>
+					</ul>
+					<span>还没有账号？</span>
+					<a class="signup" href="signup.html">注册账号</a>
+				</div>
+			</div>
+	</header>
+	<div class="pages">
+		<div class="pages_top">
+			<button class="release active_btn">发布</button>
+		</div>
+		<div class="pages_left">
+			<div class="left_menu">
+				<ul>
+					<li><a href="car.html">二手汽车</a></li>
+					<li class="active_btn"><a href="house.html">二手房产</a></li>
+					<li><a href="#">其他二手精品</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="pages_right">
+			<div id="car_color" class="options">
+				<span>面积:</span>
+				<input class="btn active_btn" type="button" name="" value="不限">
+				<input class="btn default_btn" type="button" name="" value="30平以下">
+				<input class="btn default_btn" type="button" name="" value="30-50平">
+				<input class="btn default_btn" type="button" name="" value="50-100平">
+				<input class="btn default_btn" type="button" name="" value="100-200平">
+				<input class="btn default_btn" type="button" name="" value="200平以上">
+			</div>
+			<div class="options ">
+				<span>筛选:</span>
+				<div id="floor_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="楼层">
+					<div class="downbox">
+						<ul>
+							<li>不限</li>
+							<li>低楼层</li>
+							<li>中楼层</li>
+							<li>高楼层</li>
+						</ul>
 					</div>
 				</div>
-				<ul class="products_nav">
-					<li class="products_1"><a href="#">
-						<h3>二手房产</h3>
-						<span>The secondary</span>
-					</a></li>
-					<li class="products_2"><a href="#"><h3>二手汽车</h3>
-						<span>Used-car</span>
-					</a></li>
-					<li class="products_3"><a href="#">
-						<h3>其他精品&gt;&gt;</h3><span>other</span>
-						</a></li>
-				</ul>
-				<hr class="hr_middle" />
-				<div class="product_list">
-					<ul class="product_keyword">
-						<li>全部</li>
-						<li>轿车</li>
-						<li>皮卡</li>
-						<li>越野</li>
-						<li>摩托</li>
-						<li>跑车</li>
+				<div id="direction_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="朝向">
+					<div class="downbox">
+						<ul>
+							<li>不限</li>
+							<li>朝南</li>
+							<li>朝北</li>
+							<li>朝东</li>
+							<li>朝西</li>
+						</ul>
+					</div>
+				</div>
+				<div id="age_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="楼龄">
+					<div class="downbox">
+						<ul>
+							<li>不限</li>
+							<li>5年以内</li>
+							<li>5-10年</li>
+							<li>10-20年</li>
+							<li>20年以上</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id="car_type" class="options ">
+				<span>房型:</span>
+				<input class="btn active_btn" type="button" name="" value="不限">
+				<input class="btn default_btn" type="button" name="" value="一室">
+				<input class="btn default_btn" type="button" name="" value="二室">
+				<input class="btn default_btn" type="button" name="" value="三室">
+				<input class="btn default_btn" type="button" name="" value="四室">
+				<input class="btn default_btn" type="button" name="" value="四室以上">
+			</div>
+			<div id="price_bar" class="options price">
+				<span>价格:</span>
+				<input class="btn active_btn" type="button" name="" value="不限">
+				<input class="btn default_btn" type="button" name="" value="60万以下">
+				<input class="btn default_btn" type="button" name="" value="60-120万">
+				<input class="btn default_btn" type="button" name="" value="120-200万">
+				<input class="btn default_btn" type="button" name="" value="200万以上">
+				<div class="ipt_box">
+					<input class="price_ipt" type="text" name="" placeholder="￥" value="">
+					万(澳元) -
+					<input class="price_ipt" type="text" name="" placeholder="￥" value="">
+					万(澳元)
+				</div>
+			</div>
+			<div class="options search_bar">
+				<span>选择城市:</span>
+				<div id="city_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="选择城市">
+					<div class="downbox">
+						<ul>
+							<li>悉尼</li>
+							<li>墨尔本</li>
+							<li>麦凯</li>
+							<li>珀斯</li>
+							<li>阿德莱德</li>
+						</ul>
+					</div>
+				</div>
+				<span>选择学校:</span>
+				<div id="school_selects" class="default_selects">
+					<input class="selects_input" type="text" name="" readonly="readonly" value="学校不限">
+					<div class="downbox">
+						<ul>
+							<li>澳大利亚国立大学</li>
+							<li>澳大利亚悉尼大学</li>
+							<li>澳大利亚墨尔本大学</li>
+							<li>澳大利亚阿德雷德大学</li>
+							<li>澳大利亚莫纳什大学</li>
+						</ul>
+					</div>
+				</div>
+				<div id="map_toggle" class="tog_map hide_map">收起地图</div>
+				<button class="search_btn active_btn">搜索</button>
+			</div>
+			<div id="map_warp" class="map_outer">
+				<!-- 百度地图容器 -->
+				<div class="map_inner" id="map"></div>
+			</div>
+			<div class="sort">
+				<div class="sort_list default_sort">默认排序
+				</div><div class="sort_list prise_sort">价格排序<span>◇</span> 
+				</div><div class="sort_list">人气排序
+				</div><div class="sort_list">最新</div>
+			</div>
+			<div class="shop">
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+				<div class="wares">
+					<div class="wares_inner">
+						<a href="javascript: viod;"><img src="img/product/product_1.jpg" alt="">
+						<div class="wares_tips">
+							<span>$280/周</span><span>单间出租</span>
+						</div></a>
+					</div>
+					<h3>约克星花园别墅</h3>
+					<p>独栋别墅 6卧室 2卫浴 2车位</p>
+				</div>
+			</div>
+			<div class="paging_warp">
+				<div class="paging">
+					<ul>
+						<li class="item prev"><a href="javascript:viod;"><span><i>&lt;</i>上一页</span></a></li>
+						<li class="item active"><a href="javascript:viod;">1</a></li>
+						<li class="item"><a href="javascript:viod;">2</a></li>
+						<li class="item dot"><a href="javascript:viod;">…</a></li>
+						<li class="item"><a href="javascript:viod;">20</a></li>
+						<li class="item"><a href="javascript:viod;">25</a></li>
+						<li class="item"><a href="javascript:viod;">26</a></li>
+						<li class="item"><a href="javascript:viod;">27</a></li>
+						<li class="item dot"><a href="javascript:viod;">…</a></li>
+						<li class="item next"><a href="javascript:viod;"><span>下一页<i>&gt;</i></span></a></li>
 					</ul>
-					<div class="rest">换一换</div>
-					<ul class="product_cont">
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_1.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_2.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_3.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_4.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_1.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_2.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#"><img src="img/product/product_3.jpg" /></a>
-							</div>
-							<h3>约克星花园别墅</h3>
-							<p>独栋别墅 6卧室 6卫浴 2车位</p>
-						</li>
-						<li>
-							<div class="product_img">
-								<a href="#">查看更多&gt;&gt;</a>
-							</div>
-							<h3>&nbsp;</h3>
-							<p>&nbsp;</p>
-						</li>
+					<div class="total">共50页</div>
+				</div>
+			</div>
+		</div>
+		<div class="pages_bottom">
+			
+		</div>
+
+	</div>
+	<footer >
+			<div class="ft_cont">
+				<div class="ft_cont_left">
+					<ul class="servicelink">
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">加入我们</a></li>
+						<li><a href="#">商务合作</a></li>
+						<li><a href="#">意见反馈</a></li>
 					</ul>
 				</div>
-		</div>
-	<footer></footer>
-	<script src="js/jquery-1.8.3.min.js"></script>
+				<div class="ft_cont_middle">
+					<p>欢迎来到海王扒</p>
+					<img src="img/2Dcode.jpg" alt="" />
+					<span>关注海王扒微信公众号</span>
+				</div>
+				<div class="ft_cont_right">
+					<h3>联系我们</h3>
+					<ul class="contact">
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul>
+						<li><span>电话:028-88888888</span></li>
+						<li><span>邮箱:123456@sina.com</span></li>
+						<li><span>地址:成都市武侯区</span></li>
+					</ul>
+				</div>
+			</div>	
+	</footer>
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/public.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$("header").load("header.html",function(){
-				//所在页面导航下边框显示
-				$("#nav_ul").children().eq(1).addClass('active');
-			});
-			$("footer").load("footer.html");
-			
-		})
+			//下拉菜单，传入下拉框div元素
+			downPull($('#floor_selects'));
+			downPull($('#direction_selects'));
+			downPull($('#age_selects'));
+			downPull($('#city_selects'));
+			downPull($('#school_selects'));
+			sortList($('.sort_list'));//排序列表
+			//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
+			toggleBtn($('#car_color'));
+			toggleBtn($('#price_bar'));
+			toggleBtn($('#car_type'));
+			showMap($('#map_toggle'),$('#map_warp'));//展开显示地图
+		});
 	</script>
+	<!-- 百度地图 -->
+	<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(104.118792,30.665179),12);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:1});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
 </body>
 </html>
