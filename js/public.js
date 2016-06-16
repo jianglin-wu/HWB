@@ -84,5 +84,16 @@ $(function(){
 	$(".search_submite").on('click',function(){
 		alert('你提交的内容：'+$(this).prev().val());
 	});
+	//定位，城市选择
+	nowLocation($('.location_list'),$('.location'));
+	function nowLocation(List,Inner){
+		List.find('li').on('click',function(){
+			Inner.find('span').html($(this).html());
+			List.hide();
+		});
+		Inner.on('mouseover',function(){
+			List.show();
+		})
+	}
 
 });
