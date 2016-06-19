@@ -1,3 +1,7 @@
 /node_modules
 !/node_modules/jquery/dist/jquery.min.js
+/modules
+!/modules/bower.json
+!/modules/.bowerrc
+/test
 /npm-debug.log 

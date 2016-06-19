@@ -104,10 +104,10 @@
 	height: 240px;
 	}
 .container .products_nav li.products_1 a{
-	background: url(../img/1.jpg) no-repeat;
+	background: url(../img/picture/1.jpg) no-repeat;
 }
 .container .products_nav li.products_2 a{
-	background: url(../img/2.jpg) no-repeat;
+	background: url(../img/picture/2.jpg) no-repeat;
 }
 .container .products_nav li.products_3 a{
 	background: #4e8be6;

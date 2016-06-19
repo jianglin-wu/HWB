@@ -1,0 +1,30 @@
+{
+  "name": "lietu",
+  "description": "\"海王扒\"",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://lietu555.github.io/lietu/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "modules"
+  ],
+  "dependencies": {
+    "jquery-ui": "jquery.ui#^1.11.4",
+    "angular": "angularjs#^1.5.7",
+    "seajs": "^3.0.0",
+    "react": "^15.1.0",
+    "backbone": "^1.3.3",
+    "bootstrap": "^3.3.6"
+  },
+  "keywords": [
+    "lietu"
+  ],
+  "authors": [
+    "lietu"
+  ],
+  "private": true
+}
