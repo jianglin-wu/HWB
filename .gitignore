@@ -1,7 +1,6 @@
-/node_modules
-!/node_modules/jquery/dist/jquery.min.js
-/modules
-!/modules/bower.json
-!/modules/.bowerrc
+/js/modules
+!js/modules/jquery/dist/jquery.min.js
+!js/modules/jquery-ui/jquery-ui.min.js
+!js/modules/requirejs/require.js
 /test
 /npm-debug.log 
