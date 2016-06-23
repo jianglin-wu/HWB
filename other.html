@@ -410,23 +410,35 @@
 				</div>
 			</div>	
 	</footer>
-	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/public.js"></script>
+	<script type="text/javascript" src="js/modules/requirejs/require.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			//下拉菜单，传入下拉框div元素
-			downPull($('#floor_selects'));
-			downPull($('#direction_selects'));
-			downPull($('#age_selects'));
-			downPull($('#city_selects'));
-			downPull($('#school_selects'));
-			sortList($('.sort_list'));//排序列表
-			//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
-			toggleBtn($('#car_color'));
-			toggleBtn($('#price_bar'));
-			toggleBtn($('#car_type'));
-			showMap($('#map_toggle'),$('#map_warp'));//展开显示地图
+		requirejs.config({
+			baseUrl:"js/app",
+			paths:{
+				jquery:'../modules/jquery/dist/jquery.min',
+				jquery_ui:'../modules/jquery-ui/jquery-ui.min'
+			}
+		});
+
+		requirejs(['jquery',
+					'public'],
+		function($,public){
+					//下拉菜单，传入下拉框div元素
+					public.downPull($('#floor_selects'));
+					public.downPull($('#direction_selects'));
+					public.downPull($('#age_selects'));
+					public.downPull($('#city_selects'));
+					public.downPull($('#school_selects'));
+					//排序列表
+					public.sortList($('.sort_list'));
+					//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
+					public.toggleBtn($('#car_color'));
+					public.toggleBtn($('#price_bar'));
+					public.toggleBtn($('#car_type'));
+					//展开显示地图
+					public.showMap($('#map_toggle'),$('#map_warp'));
+					//运行main模块
+					requirejs(['../main']);
 		});
 	</script>
 	<!-- 百度地图 -->
@@ -446,7 +458,7 @@
       map.enableScrollWheelZoom();
       map.enableKeyboard();
       map.enableDragging();
-      map.enableDoubleClickZoom()
+      map.enableDoubleClickZoom();
     }
     function addClickHandler(target,window){
       target.addEventListener("click",function(){

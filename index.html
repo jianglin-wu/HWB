@@ -6,10 +6,8 @@
 		<link rel="shortcut icon" href="img/picture/favicon48x48.jpg" type="image/x-icon" />
 		<link rel="stylesheet" type="text/css" href="css/public.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<script type="text/javascript" datd-main="js/main.js" src="js/modules/requirejs/require.js"></script>
 	</head> 
 	<body>
-		<noscript>提示：检测到您的浏览器未开启JavaScript，请开启后刷新页面重试:)</noscript>
 		<header>
 			<!-- 顶部导航条 -->
 			<div class="top_warp">
@@ -346,10 +344,34 @@
 			</div>
 			
 		</footer>
-		<!-- <script type="text/javascript" src="js/modules/jquery/dist/jquery.min.js"></script>
-		<script type="text/javascript" src="js/modules/jquery-ui/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="js/app/ajax.js"></script>
-		<script type="text/javascript" src="js/app/app.js"></script>
-		<script type="text/javascript" src="js/app/public.js"></script> -->
+		<script type="text/javascript" src="js/modules/requirejs/require.js"></script>
+		<script type="text/javascript">
+			requirejs.config({
+				baseUrl:"js/app",
+				paths:{
+					jquery:'../modules/jquery/dist/jquery.min',
+					jquery_ui:'../modules/jquery-ui/jquery-ui.min'
+				}
+			});
+
+			requirejs(['jquery',
+						'public',
+						'home'],
+			function($,public,home){
+
+						//使用ajax配合json修改页面数据 此处传入两个数（被点击li的父级，被修改的元素集）
+						home.ajaxPages($('.product_keyword'),$('.product_list .shop .wares'));
+						
+						//传入对象 背景轮播
+						home.bgMove($('.home_banner li'));
+						//点击选择按钮 传入按钮父级元素 为每个按钮添加一个btn类
+						public.toggleBtn($('#filter_inner'));
+						//下拉多选框
+						public.downPull($('#catalog_selects'));
+						public.downPull($('#city_selects'));
+						//运行main模块
+						requirejs(['../main']);
+			});
+		</script>
 	</body>
 </html>

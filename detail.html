@@ -142,8 +142,22 @@
 		</div>
 		
 	</footer>
-	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/public.js"></script>
+	<script type="text/javascript" src="js/modules/requirejs/require.js"></script>
+	<script type="text/javascript">
+		requirejs.config({
+			baseUrl:"js/app",
+			paths:{
+				jquery:'../modules/jquery/dist/jquery.min',
+				jquery_ui:'../modules/jquery-ui/jquery-ui.min'
+			}
+		});
+
+		requirejs(['jquery',
+					'public'],
+		function($,public){
+					
+					requirejs(['../main']);
+		});
+	</script>
 </body>
 </html>
