@@ -72,7 +72,10 @@ define(['jquery'],function(jquery){
 			List.show();
 		});
 	}
-
+	function listWidth(obj,win){
+		var liLang=obj.find("li");
+		obj.css('width',(liLang.outerWidth()+win)*liLang.length+'px');
+	}
 	return {
 		resetInput:resetInput,
 		downPull:downPull,
@@ -80,6 +83,7 @@ define(['jquery'],function(jquery){
 		toggleBtn:toggleBtn,
 		showMap:showMap,
 		nowLocation:nowLocation,
+		listWidth:listWidth
 	};
 
 });
