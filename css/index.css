@@ -154,7 +154,7 @@
 	margin-right: 12px;
 	cursor: pointer;
 }
-.product_list .word_filer .product_keyword li:hover{
+.product_list .word_filer .product_keyword li.active{
 	color: #4E8BE6;
 }
 .product_list .word_filer .rest{
