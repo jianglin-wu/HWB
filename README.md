@@ -1,16 +1,16 @@
-###个人简历
+###>个人简历
 ----
-####基本信息：
+>####基本信息：
 
-####求职意向：#### 初级web前端开发
+####>求职意向：#### 初级web前端开发
 
 ####技能介绍：
-1.掌握HTML5 CSS3开发。掌握响应式布局与自适应,基本掌握CSS预处理器Less Sass。
-2.掌握原生JavaScript，理解运用闭包、原型模式等理念，掌握Ajax与JSON。
-3.熟练使用JQuery框架，掌握requireJS与模块化编程思想，基本掌握Bootstrap框架。
-4.熟练运用图片图形工具PhotoShop，CorelDRAW。
-5.使用GitHub，掌握Git版本控制，Bower，npm包管理工具。
-6.熟练解决常见浏览器兼容问题
+1. 掌握HTML5 CSS3开发。掌握响应式布局与自适应,基本掌握CSS预处理器Less Sass。
+2. 掌握原生JavaScript，理解运用闭包、原型模式等理念，掌握Ajax与JSON。
+3. 熟练使用JQuery框架，掌握requireJS与模块化编程思想，基本掌握Bootstrap框架。
+4. 熟练运用图片图形工具PhotoShop，CorelDRAW。
+5. 使用GitHub，掌握Git版本控制，Bower，npm包管理工具。
+6. 熟练解决常见浏览器兼容问题
 
 ####技能介绍：
 作品[海王扒二手交易平台](http://lietu555.github.io/lietu/)通过设计图，制作了web网页，实现部分js交互与逻辑，运用JQuery框架，	requireJS模块化，Ajax异步请求。拼接css贴图减少http请求数，提取公共代码与组件等操作。
