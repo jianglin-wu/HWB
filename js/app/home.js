@@ -20,9 +20,13 @@ define(['jquery','ajax'],function($,ajax){
 		var j=0;
 		btnLi.find('li').each(function(){
 			btnLi.find('li').eq(j).click(function(){
+				btnLi.find('li').css('color','#666');
+				$(this).css('color','#4E8BE6');
 				ajax('json/product_keyword'+($(this).index()+1)+'.json',function(srt){
-					var aData=eval(srt);
+					var aData=eval(srt); 
+
 						Target.each(function(){
+							console.log(aData[$(this).index()].src);
 						Target.find('img').eq($(this).index()).attr('src',aData[$(this).index()].src);
 						Target.find('h3').eq($(this).index()).html(aData[$(this).index()].h3);
 						Target.find('p').eq($(this).index()).html(aData[$(this).index()].p);
