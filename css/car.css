@@ -4,6 +4,13 @@
 	margin: 90px auto 0;
 	border: 1px solid #ddd;
 }
+.pages:after{
+	content: '';
+	clear: both;
+	display: table;
+	*overflow: hidden;
+	*zoom: 1;
+}
 .pages_top{
 	width: 100%;
 	height: 70px;

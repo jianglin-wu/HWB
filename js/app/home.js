@@ -30,7 +30,7 @@ define(['jquery','ajax'],function($,ajax){
 						Target.find('h3').eq($(this).index()).html(aData[$(this).index()].h3);
 						Target.find('p').eq($(this).index()).html(aData[$(this).index()].p);
 					});
-				});
+				},"json");
 			});
 			j++;
 		});
