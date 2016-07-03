@@ -23,16 +23,31 @@
 	display: block; 
 	width: 300px;
 	height: 2px;
-	background: white;
 	position: absolute;
 	top: 50%;
 	margin-top: -14px;
+	background: white;
 }
 .banner .logo:before{
 	left: -310px;
+	background: -webkit-gradient(linear,0 100%,100% 100%,from(transparent),to(white));
+	background: -webkit-linear-gradient(to left,white,transparent);
+	background: -moz-linear-gradient(to left,white,transparent);
+	background: -o-linear-gradient(to left,white,transparent);
+	background: -ms-linear-gradient(to left,white,transparent);
+	background: linear-gradient(to left,white,transparent);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=transparent,endColorStr=white,gradientType=1);
 }
 .banner .logo:after{
 	right: -310px;
+	background: -webkit-gradient(linear,0 100%,100% 100%,from(white),to(transparent));
+	background: -webkit-gradient(lineat,0 0,0 100%,from(transparent),to(white));
+	background: -webkit-linear-gradient(to right,white,transparent);
+	background: -moz-linear-gradient(to right,white,transparent);
+	background: -o-linear-gradient(to right,white,transparent);
+	background: -ms-linear-gradient(to right,white,transparent);
+	background: linear-gradient(to right,white,transparent);
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=white,endColorStr=transparent,gradientType=1);
 }
 .banner  h2{
 	margin-top: 18px;
