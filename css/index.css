@@ -201,20 +201,20 @@
 .container .product_list .shop{
 	padding-top: 0;
 }
-.container .product_list .shop .last{
+.container .product_list .shop>div:last-child{
 	width: 210px;
 	height: 200px;
 	background-color: #4e8be6;
 	position: relative;
 	top: -130px;
 }
-.container .product_list .shop .last h3{
+.container .product_list .shop>div:last-child h3{
 	color: white;
 	font-size: 30px;
 	font-weight: lighter;
 	line-height: 200px;
 	text-align: center;
 }
-.container .product_list .shop .last h3 span{
+.container .product_list .shop>div:last-child h3 span{
 	font-family: '宋体';
 }
